@@ -1,3 +1,4 @@
+
 <div id="cabeceraglobal">
 	<div>
 		<h1 id="titulo"><span>GRUPO DE INVESTIGACIÓN MB</span></h1>		  			
@@ -19,12 +20,18 @@
 
 	<div id="menuright">
 	
-	
-	<? if (isset($_SESSION['loggedin'])): ?>
+	<?php 
+	if(isset($_SESSION['error'])){
+  		 echo $_SESSION['error'];
+   		 unset($_SESSION['error']);
+	}
+?>
+
+	<?php if(isset($_SESSION['loggedin'])): ?>
  		<p>bienvenido <?php echo $_SESSION['username']; ?><a href="index.php?sec=logout">logout</a> </p>
   		
+	<?php else: ?>
 
-	<? else: ?>
 
 		<div id="loginform">      	
         	<form action='?sec=login&act=submit' method='post'>			 
@@ -37,7 +44,7 @@
 		</div>
 		
 
-	<? endif; ?>
+	<?php endif; ?>
 	
 	
 
