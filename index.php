@@ -11,7 +11,7 @@ ini_set('display_errors', 'On');
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Grupo de Investigación MB</title>
+	<title>GRUPO DE INSVESTIGACION MB</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 </head>
 
