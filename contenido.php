@@ -7,7 +7,7 @@ switch ($seccion) {
         include 'html/portada.html';
         break;
     case 'miembros':
-        include 'html/miembros.html';
+        include 'src/miembros.php';
         break;
 	case 'publicaciones':
         include 'html/publicaciones.html';
@@ -45,6 +45,12 @@ switch ($seccion) {
         break;
 	case 'terminosdeuso':
         include 'html/terminosdeuso.html';
+        break;
+	case 'backup':
+        include 'src/backup.php';
+        break;
+	case 'restore':
+        include 'src/restore.php';
         break;
 	case 'contacto':
         include 'html/contacto.html';

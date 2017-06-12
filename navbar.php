@@ -26,8 +26,8 @@
 			<ul>
 				<li><a href="index.php?sec=editarusuarios">Editar usuarios</a></li>
 				<li><a href="index.php?sec=verlog">Ver log</a></li>
-				<li><a href="index.php?sec=editarusuarios">Realizar un backup</a></li>
-				<li><a href="index.php?sec=verlog">Restaurar el backup</a></li>
+				<li><a href="index.php?sec=backup">Realizar un backup</a></li>
+				<li><a href="index.php?sec=restore">Restaurar el backup</a></li>
 			</ul>					
 		</div>
 	<?php endif; ?>
