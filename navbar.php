@@ -19,14 +19,24 @@
 
 	<div id="espacio"></div>
 	
-	<div id="nav1">
-		<ul>
-			<li><a href="index.php?sec=editarusuarios">Editar usuarios</a></li>
-			<li><a href="index.php?sec=verlog">Ver log</a></li>
-			<li><a href="index.php?sec=editarusuarios">Realizar un backup</a></li>
-			<li><a href="index.php?sec=verlog">Restaurar el backup</a></li>
-		</ul>					
-	</div>
+
+
+	<?php if(isset($_SESSION['loggedin']) and $_SESSION['admin']==1) : ?>
+		<div id="nav1">
+			<ul>
+				<li><a href="index.php?sec=editarusuarios">Editar usuarios</a></li>
+				<li><a href="index.php?sec=verlog">Ver log</a></li>
+				<li><a href="index.php?sec=editarusuarios">Realizar un backup</a></li>
+				<li><a href="index.php?sec=verlog">Restaurar el backup</a></li>
+			</ul>					
+		</div>
+	<?php endif; ?>
+
+
+
+
+
+
 </nav>
 
 				

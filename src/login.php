@@ -27,7 +27,10 @@ function login(){
 	if( password_verify($password, $hash) ) {
 		$_SESSION['loggedin'] = true;
     	$_SESSION['username'] = $email;
-    	$_SESSION['admin'] = $email;
+
+		$res = dbConnect("SELECT admin FROM usuarios WHERE email='$email'");
+		$admin = array_values(mysqli_fetch_array($res))[0];
+    	$_SESSION['admin'] = $admin;
 		header("Location: index.php?sec=home");
 		exit();
 	} else {
