@@ -19,16 +19,24 @@
   	</div>
 
 	<div id="menuright">
-	
-	<?php 
-	if(isset($_SESSION['error'])){
-  		 echo $_SESSION['error'];
-   		 unset($_SESSION['error']);
-	}
-?>
+
+		<div id="menurighterror">			
+			<?php  	if(isset($_SESSION['error'])){
+
+						 echo $_SESSION['error'];
+
+						 unset($_SESSION['error']);
+					}
+			?>
+		</div>
+
 
 	<?php if(isset($_SESSION['loggedin'])): ?>
- 		<p>bienvenido <?php echo $_SESSION['username']; ?><a href="index.php?sec=logout">logout</a> </p>
+		<div id="menurightbienvenido">		
+ 			<span>bienvenido <?php echo $_SESSION['username']; ?></span>
+ 			<a href="index.php?sec=logout">logout</a> </p>			
+		</div>
+
   		
 	<?php else: ?>
 
