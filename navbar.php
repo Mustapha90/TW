@@ -39,7 +39,7 @@
 				<li><a>Editar usuarios</a>
 					<ul class="submenu">
 						<li><a href="index.php?sec=adduser">Añadir miembro</a></li>
-						<li><a href="">Editar usuario</a></li>
+						<li><a href="index.php?sec=editarusuarios">Editar usuario</a></li>
 						<li><a href="">Borrar usuario</a></li>
 			  		</ul>
 				</li>

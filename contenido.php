@@ -22,7 +22,7 @@ switch ($seccion) {
         include 'html/addproyecto.html';
         break;
 	case 'editarusuarios':
-        include 'html/editarusuarios.html';
+        include 'src/editarusuarios.php';
         break;
 	case 'adduser':
         include 'src/adduser.php';
@@ -40,6 +40,9 @@ switch ($seccion) {
 	case 'mapadelsitio':
         include 'html/mapadelsitio.html';
         break;
+	case 'deleteuser':
+        include 'src/deleteuser.php';
+        break;
 	case 'busqueda':
         include 'src/busqueda.php';
         break;
@@ -49,12 +52,16 @@ switch ($seccion) {
 	case 'backup':
         include 'src/backup.php';
         break;
+	case 'edituser':
+        include 'src/edituser.php';
+        break;
 	case 'restore':
         include 'src/restore.php';
         break;
 	case 'contacto':
         include 'html/contacto.html';
         break;
+
     default:
         include 'html/portada.html';
         break;
