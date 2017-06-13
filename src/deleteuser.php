@@ -25,6 +25,6 @@ $res = dbConnect("DELETE FROM usuarios WHERE email='$email'");
  
 </div>
 
-</div>
+
 
 

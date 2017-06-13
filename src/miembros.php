@@ -5,9 +5,6 @@ require 'dbConnect.php';
 $res = dbConnect("SELECT * FROM usuarios");
 
 
-
-
-
 ?>
 
 <h3>Miembros del grupo de investigación</h3>
