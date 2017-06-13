@@ -38,16 +38,15 @@ $res = dbConnect("SELECT * FROM usuarios");
        <td><?php echo($row["telefono"]);?></td>
 		<td>
 
-		<form id="form1" name="form1" method="post" action="index.php?sec=deleteuser&user=<?php echo($row["email"]);?>" 
-		  onsubmit="return confirm('Estas seguro que desea eliminar este usuario?');">
-		  <input type="hidden" name="act" value="run">
-		  <input id="btnDelete" name="btnDelete" type="submit" value="Eliminar"/>
-		</form>
+<form id="form1" name="form1" method="post" action="index.php?sec=deleteuser&user=<?php echo($row["email"]);?>" 
+   onsubmit="return confirm('Estas seguro que desea eliminar este usuario?');">
+  <input type="hidden" name="act" value="run">
+  <input id="btnDelete" name="btnDelete" type="submit" value="Eliminar"/>
+</form>
 
-		<form id="form1" name="form1" method="post" action="index.php?sec=edituser&user=<?php echo($row["email"]);?>" 
-		  <input type="hidden" name="act" value="run">
-		  <input id="btnDelete" name="btnDelete" type="submit" value="Editar"/>
-		</form>
+
+<a href="index.php?sec=edituser&user=<?php echo($row["email"]);?>">Editar</a>
+
 
 		</td>
      </tr>
