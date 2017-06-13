@@ -10,7 +10,7 @@ ini_set('max_input_time', 4000);
 ini_set('max_execution_time', 4000);
 
 
-$target_dir = "../fotos";
+$target_dir = "images/";
 $imageFileType = '';
 $target_file='';
 
