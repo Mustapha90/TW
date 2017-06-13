@@ -4,10 +4,10 @@
 
 body,html{margin:0px;}
 
-#global {width:100%; margin: 0px; padding: 0px; background-color:aliceblue}
+#global {width:100%; margin: 0px; padding: 0px; background-color:black;}
 
-	#contenido {width: 1140px; margin:0 auto; height: 1550px}
-		
+	#contenido {width: 1140px; margin:0 auto;  height: auto; }
+
 		#cabeceraglobal { float:left; width:100%; height: 125px; background-color:darkblue; margin-top: 2px}
 			#titulo {float:left; margin: 40px 60px; color:white}
 		
@@ -30,8 +30,8 @@ body,html{margin:0px;}
 
 		#submenu {float: left; width: 100%; height: 10px; background-color:#fafaf7}
 
-		#centro {float:left; width: 100%; height: 1230px; background-color: #FAFAFA; margin-top: 0px;}
-			#navbar {float:left; width: 20%; height: 97%; background-color: #efede6}
+		#centro {float:left; width: 100%; min-height: 1230px; height: auto; background-color: #FAFAFA; margin-top: 0px;}
+			#navbar {float:left; width: 20%; height: 1100px; background-color: #efede6}
 			#nav1{float:left; width: 100%; height: 141px; }
 			#navbar	ul { list-style-type: none; margin: 0; padding: 0; width: 100%; background-color: #9F9E99; border: 1px solid #9F9e99; }
 			#navbar ul li a { display: block; color: #000; padding: 8px 16px; text-decoration: none;}
@@ -53,7 +53,7 @@ body,html{margin:0px;}
 			#centro2 {float:left; width: 80%; height:100%; background-color:#FAFAFA}
 				#centro_header{float:left; width: 96%; height: 4%; margin-left: 2%; background-color:#efede6}
 					#centro_header > h3{float:left; margin:15px 0px 0px 20px}
-				#centro_content{float:left; width: 96%; height:92.25%; margin: 1% 0px 0px 2%; background-color:#efede6}
+				#centro_content{float:left; width: 96%; height:80%; margin: 1% 0px 40px 2%; background-color:#efede6}
 					#ficha_miembro{float: left; width:99%; height: 21%; margin: 10px 0px 0px 4px; background-color:white}
 						#foto_miembro{float:left; width:15%; height:50%; margin: 10px 20px}
 						#info_miembro{float:left; width:75%; height: 100%; background-color: white}
