@@ -16,7 +16,7 @@ $res = dbConnect("SELECT * FROM usuarios");
 
 
   	<?php if ($res->num_rows > 0): ?>
-   	<table>
+   	<table id="mgusuariosta">
      <tr>
        <th>Nombre</th>
        <th>Apellidos</th>
@@ -38,16 +38,14 @@ $res = dbConnect("SELECT * FROM usuarios");
        <td><?php echo($row["telefono"]);?></td>
 		<td>
 
-<form id="form1" name="form1" method="post" action="index.php?sec=deleteuser&user=<?php echo($row["email"]);?>" 
-   onsubmit="return confirm('Estas seguro que desea eliminar este usuario?');">
-  <input type="hidden" name="act" value="run">
-  <input id="btnDelete" name="btnDelete" type="submit" value="Eliminar"/>
-</form>
-
-
-<a href="index.php?sec=edituser&user=<?php echo($row["email"]);?>">Editar</a>
-
-
+			<form id="form1" name="form1" method="post" action="index.php?sec=deleteuser&user=<?php echo($row["email"]);?>" 
+			   onsubmit="return confirm('Estas seguro que desea eliminar este usuario?');">
+			  <input type="hidden" name="act" value="run">
+			  <input id="btnDelete" name="btnDelete" type="submit" value="Eliminar"/>
+			</form>
+				<a href="index.php?sec=edituser&user=<?php echo($row["email"]);?>"> <button id="btnEditar">Editar</button> </a>
+	
+	
 		</td>
      </tr>
      <?php endwhile; ?> 	
