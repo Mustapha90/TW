@@ -53,6 +53,8 @@ body,html{margin:0px;}
 			#centro2 {float:left; width: 80%; height:100%; background-color:#FAFAFA}
 				#centro_header{float:left; width: 96%; height: 4%; margin-left: 2%; background-color:#efede6}
 					#centro_header > h3{float:left; margin:15px 0px 0px 20px}
+					.errorlabel{color:red; font-size: 90%}
+
 				#centro_content{float:left; width: 96%; height:80%; margin: 1% 0px 40px 2%; background-color:#efede6}
 					#ficha_miembro{float: left; width:99%; height: 21%; margin: 10px 0px 0px 4px; background-color:white}
 						#foto_miembro{float:left; width:15%; height:50%; margin: 10px 20px}
@@ -61,17 +63,26 @@ body,html{margin:0px;}
 							#info_miembro ul li { background: #cce5ff; margin: 5px; border-bottom: 1px solid black; background-color:white; list-style-type: none; font-size: 85%}
 							#info_miembro_label{color: blue}
 							#info_miembro ul li span{color: black}
-				#containerRegistro{float:left; width: 80%; height: 96%; margin:5px 0px 0px 10%; border-radius: 5px; padding: 20px;}
-				#containerRegistro input[type=text], select { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc;
-    															border-radius: 4px; box-sizing: border-box;}
-				#containerRegistro input[type=password], select { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc;
-    															border-radius: 4px; box-sizing: border-box;}
+					#containerRegistro{float:left; width: 80%; height: 96%; margin:5px 0px 0px 10%; border-radius: 5px; padding: 20px;}
+					#containerRegistro input[type=text], select { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc;
+																	border-radius: 4px; box-sizing: border-box;}
+					#containerRegistro input[type=password], select { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc;
+																	border-radius: 4px; box-sizing: border-box;}
 
-				#containerRegistro input[type=submit] { width: 100%; background-color: darkblue;color: white; padding: 14px 20px; margin: 8px 0; border: none;
-    													border-radius: 4px; cursor: pointer;}
+					#containerRegistro input[type=submit] { width: 100%; background-color: darkblue;color: white; padding: 14px 20px; margin: 8px 0; border: none;
+															border-radius: 4px; cursor: pointer;}
 
-				#containerRegistro input[type=submit]:hover { background-color: #3152BC;}
-				.errorlabel{color:red; font-size: 90%}
+					#containerRegistro input[type=submit]:hover { background-color: #3152BC;}
+
+
+					#mgusuariosta { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; }
+					#mgusuariosta td, #mgusuariosta th { border: 1px solid #ddd; padding: 8px;}
+					#mgusuariosta tr:nth-child(even){background-color: #f2f2f2;}
+					#mgusuariosta tr:hover {background-color: #ddd;}
+					#mgusuariosta th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: darkblue; color: white;}
+					.boton { border: none; padding: 5px 5px; display: inline-block;
+						margin: 2px 2px; cursor: pointer; width: 16px; height: 16px; border-radius: 3px; text-decoration: none}
+						#btnEdit { .boton; background: #d5d1bf url(../images/editb.png)  no-repeat 5px center}
 
 
 
@@ -87,19 +98,3 @@ body,html{margin:0px;}
 
 
 
-table {
-    border-collapse: collapse;
-    width: 50%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
