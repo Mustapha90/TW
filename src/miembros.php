@@ -6,7 +6,7 @@ require 'dbConnect.php';
 
 
 
-$limit = 2;
+$limit = 4;
 $sql = "SELECT COUNT(email) FROM usuarios";  
 
 $res = dbConnect($sql);
@@ -19,7 +19,7 @@ $total_pages = ceil($total_records / $limit);
 <h3>Miembros del grupo de investigación</h3>
 </div>
 
-
+<div id="centro_content">
 <div id="target-content" ></div>
 
 <?php if ($res->num_rows > 0): ?>
@@ -47,6 +47,6 @@ $total_pages = ceil($total_records / $limit);
 <?php else: ?>
    	<p>No se encuentran miembros registrados en este momento..</p>
 <?php endif; ?>
-
+</div>
 
 

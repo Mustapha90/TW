@@ -6,7 +6,7 @@ ini_set('display_errors', 'On');
 
 require 'dbConnect.php';
 
-$limit = 2;  
+$limit = 4;  
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 $start_from = ($page-1) * $limit;  
   
