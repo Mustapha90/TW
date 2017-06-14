@@ -25,5 +25,9 @@ exec($cmd);
 </div>
 
 <div id="centro_content">
-  <a href="<?php echo $filename?>" >Download</a>
+	<span id="backup_span"> Haz click para descargar backup : </span>
+	<div id="backup_content">
+		<a href="<?php echo $filename?>"> <button id="btnbackup">Descargar backup </button> </a>
+	</div>
+ 	
 </div>
