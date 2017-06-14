@@ -9,6 +9,9 @@ $server_name   = DB_HOST;
 $username      = DB_USER;
 $password      = DB_PASSWORD;
 $database_name = DB_NAME;
+
+
+
 $date_string   = date("dmYhis");
 $filename = BACKUP_PATH . $date_string . "_" . $database_name . ".sql";
 
@@ -25,9 +28,9 @@ exec($cmd);
 </div>
 
 <div id="centro_content">
-	<span id="backup_span"> Haz click para descargar backup : </span>
+
 	<div id="backup_content">
-		<a href="<?php echo $filename?>"> <button id="btnbackup">Descargar backup </button> </a>
+		 <h4 id="backup_h4"> Haz click para descargar el backup : <a href="<?php echo $filename?>"> <button id="btnbackup">Descargar backup </button> </a> </h4>
 	</div>
  	
 </div>
