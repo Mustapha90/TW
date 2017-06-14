@@ -1,6 +1,6 @@
 <?php
 
-include 'src/dbconfig.php';
+include 'dbconfig.php';
 
 // Recibimos como parámetro el comando SQL
 function dbConnect($consulta_sql) {
