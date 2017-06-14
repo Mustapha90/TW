@@ -81,7 +81,7 @@ body,html{margin:0px;}
 					#containerRegistro input[type=submit]:hover { background-color: #3152BC;}
 
 
-					#mgusuariosta { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; font-size:60% }
+					#mgusuariosta { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; font-size:75% }
 					#mgusuariosta td, #mgusuariosta th { border: 1px solid #4E0DE7; padding: 8px;}
 					#mgusuariosta tr:nth-child(even){background-color: #f2f2f2;}
 					#mgusuariosta tr:hover {background-color: #ddd;}

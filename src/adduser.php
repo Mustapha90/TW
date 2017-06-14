@@ -38,6 +38,7 @@
 	$instituto=''; 
 	$direccion='';
 	$imagen='';
+	$admin='';
 
 
 	function validateForm(){
@@ -113,16 +114,21 @@
 
 
 	function register(){
-		global $nombre, $email, $password, $nombre, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen;
+		global $nombre, $email, $password, $nombre, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen, $admin;
 		$hash = password_hash($password, \PASSWORD_DEFAULT);
 
+		if(isset($_POST['admin']))
+			$admin=1;	
+		else
+			$admin=0;	
+			
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
 
-		$insert = dbConnect("INSERT INTO usuarios (nombre, email, password, apellidos, categoria, telefono, url, departamento, centro, instituto, direccion, imagen) VALUES ('$nombre','$email','$hash', '$apellidos', '$categoria', '$telefono', '$url', '$departamento', '$centro', '$instituto', '$direccion', '$imagen')");
+		$insert = dbConnect("INSERT INTO usuarios (nombre, email, password,admin, apellidos, categoria, telefono, url, departamento, centro, instituto, direccion, imagen) VALUES ('$nombre','$email','$hash','$admin', '$apellidos', '$categoria', '$telefono', '$url', '$departamento', '$centro', '$instituto', '$direccion', '$imagen')");
 
 		if(!$insert){
 			die("No se ha podido registrar el usuario: ");

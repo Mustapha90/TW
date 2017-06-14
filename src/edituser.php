@@ -16,6 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$centro=$_POST['centromus'];
 	$instituto=$_POST['instituto']; 
 	$direccion=$_POST['direccion'];
+	if(isset($_POST['admin']))
+		$admin=1;	
+	else
+		$admin=0;	
 
 
 	$sql = "UPDATE usuarios SET nombre='$nombre', 
@@ -26,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								departamento='$departamento', 
 								centro='$centro',
 								instituto='$centro', 
-								direccion='$direccion' WHERE email='$email'";
+								direccion='$direccion', admin='$admin' WHERE email='$email'";
 
 	$res = dbConnect($sql);
 	registrarAccion("Editar usuario", $_SESSION['username']);
@@ -121,6 +125,9 @@ else{
 		<input class="login" type="text" id="direccion" name="direccion" value="<?php echo($row["direccion"]);?>">
 		<br>
 
+		<label for="admin">Otorgar privelegios de aministrador:</label>
+ 		<input type="checkbox" name="admin" value="admin"><br>
+		<br>
 
 		<div id="lower">
 			<input class="login" type="submit" value="Guardar cambios">

@@ -21,7 +21,6 @@ $res = dbConnect("SELECT * FROM usuarios");
        <th>Email</th>
        <th>Departamento</th>
        <th>Centro</th>
-       <th>Instituto</th>
        <th>Dirección</th>
        <th>Teléfono</th>
        <th>Bloqueado</th>
@@ -37,7 +36,6 @@ $res = dbConnect("SELECT * FROM usuarios");
        	<td><?php echo($row["email"]);?></td>
        	<td><?php echo($row["departamento"]);?></td>
        	<td><?php echo($row["centro"]);?></td>
-       	<td><?php echo($row["instituto"]);?></td>
        	<td><?php echo($row["direccion"]);?></td>
         <td><?php echo($row["telefono"]);?></td>
        	<td>
