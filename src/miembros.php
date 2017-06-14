@@ -23,14 +23,21 @@ $total_pages = ceil($total_records / $limit);
 <div id="target-content" ></div>
 
 <?php if ($res->num_rows > 0): ?>
-			<ul class='pagination text-center' id="pagination">
-				<?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
+		<div id="center">
+  			<div id="pagination">
+          			    
+           			<?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
             		if($i == 1):?>
-            			<li class='active'  id="<?php echo $i;?>"><a href='src/pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li> 
+            			<li class='active'  id="<?php echo $i;?>"> <a href='src/pagination.php?page=<?php echo $i;?>'> <?php echo $i;?></a></li>
             		<?php else:?>
             			<li id="<?php echo $i;?>"><a href='src/pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
-        			<?php endif;?>          
-<?php endfor;endif;?>  
+        			<?php endif;?>
+
+        			
+	<?php endfor;endif;?>
+
+			  </div>
+		</div>  
 
 			<script>
 				jQuery(document).ready(function() {
