@@ -52,16 +52,23 @@ function validarFichero($target_file){
 
 <h3>Restaurar Backup</h3>
 </div>
+
+
 <div id="centro_content">
 	<?php if($success): ?>
 		<h2>La copia de seguridad se ha realizado correctamente!</h2>
 	<?php else: ?>
-			<form action="" method="post" enctype="multipart/form-data">
-				<label for="fileToUpload">Restaurar copia de seguridad:</label>
-				<input type="file" name="fileToUpload" id="fileToUpload">
-				<div class="errorlabel"<label for="passError"><?php echo $errorUpload;?></label></div>
-  				<input type="submit" value="Restaurar">
-		    </form>
+		<form action="" method="post" enctype="multipart/form-data">
+			<div id="cont">
+				<div id="cont1"> <h4> Restaurar copia de seguridad:</h4> </div>
+				<div id="cont2"> <input type="file" name="fileToUpload" id="fileToUpload"> </div>
+				<div id="cont3"> <button id="btnbackup">Restaurar</button>	 </div>
+			</div>
+			<div id="errorLabel"<label for="passError"><?php echo $errorUpload;?></label></div>
+		</form>
+		    
+		    
 	<?php endif; ?>
 </div>
+
 
