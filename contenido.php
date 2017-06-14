@@ -27,8 +27,8 @@ switch ($seccion) {
 	case 'adduser':
         include 'src/adduser.php';
         break;
-	case 'verlog':
-        include 'html/verlog.html';
+	case 'log':
+        include 'src/log.php';
         break;
         break;
 	case 'login':
@@ -42,6 +42,9 @@ switch ($seccion) {
         break;
 	case 'deleteuser':
         include 'src/deleteuser.php';
+        break;
+	case 'blockuser':
+        include 'src/blockuser.php';
         break;
 	case 'busqueda':
         include 'src/busqueda.php';

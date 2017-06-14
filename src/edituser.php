@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								direccion='$direccion' WHERE email='$email'";
 
 	$res = dbConnect($sql);
+	registrarAccion("Editar usuario", $_SESSION['username']);
 }
 else{
 	$res = dbConnect("SELECT * FROM usuarios WHERE email='$email'");

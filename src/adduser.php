@@ -127,6 +127,7 @@
 		if(!$insert){
 			die("No se ha podido registrar el usuario: ");
 		}
+			registrarAccion("Añadir miembro", $_SESSION['username']);
 			echo $nombre.", you are now registered. Thank you!<br><a href=login.php>Login</a> | <a href=index.php>Index</a>";		
 
 	}

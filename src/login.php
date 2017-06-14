@@ -23,16 +23,28 @@ function login(){
 
 	$hash = array_values(mysqli_fetch_array($res))[0];
 
+	$res = dbConnect("SELECT bloqueado FROM usuarios WHERE email='$email'");
+	$bloqueado = array_values(mysqli_fetch_array($res))[0];
 
 	if( password_verify($password, $hash) ) {
-		$_SESSION['loggedin'] = true;
-    	$_SESSION['username'] = $email;
 
-		$res = dbConnect("SELECT admin FROM usuarios WHERE email='$email'");
-		$admin = array_values(mysqli_fetch_array($res))[0];
-    	$_SESSION['admin'] = $admin;
-		header("Location: index.php?sec=home");
-		exit();
+		if($bloqueado==0){
+			$_SESSION['loggedin'] = true;
+    		$_SESSION['username'] = $email;
+
+			$res = dbConnect("SELECT admin FROM usuarios WHERE email='$email'");
+			$admin = array_values(mysqli_fetch_array($res))[0];
+    		$_SESSION['admin'] = $admin;
+
+			registrarAccion("Log In", $email);
+
+			header("Location: index.php?sec=home");
+			exit();
+		}
+		else{
+			$loginError="Su cuenta ha sido bloqueada, contacte con el administrador!";
+			$_SESSION['error'] = $loginError;
+		}
 	} else {
 		$loginError="Usuario/contraseña incorrectos";
 		$_SESSION['error'] = $loginError;

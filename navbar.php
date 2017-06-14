@@ -42,7 +42,7 @@
 						<li><a href="index.php?sec=editarusuarios">Editar usuario</a></li>
 			  		</ul>
 				</li>
-				<li><a href="index.php?sec=verlog">Ver log</a></li>
+				<li><a href="index.php?sec=log">Ver log</a></li>
 				<li><a href="index.php?sec=backup">Realizar un backup</a></li>
 				<li><a href="index.php?sec=restore">Restaurar el backup</a></li>
 			</ul>					

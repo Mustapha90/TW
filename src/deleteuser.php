@@ -4,6 +4,7 @@ require 'dbConnect.php';
 
 $email = $_GET["user"];
 $res = dbConnect("DELETE FROM usuarios WHERE email='$email'");
+registrarAccion("Eliminar usuario", $_SESSION['username']);
 
 
 

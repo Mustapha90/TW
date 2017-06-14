@@ -33,6 +33,20 @@ function dbConnect($consulta_sql) {
     // Devolvemos el resultado
     return $resultado;
 }
+
+
+function registrarAccion($tipo, $email) {
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$fecha =  date("Y-m-d");
+	$hora = date("H:i:s");
+	$insert = dbConnect("INSERT INTO acciones (email, tipo, ip, fecha, hora) VALUES ('$email','$tipo', '$ip', '$fecha', '$hora')");
+
+	if(!$insert){
+		die("No se ha registrado la acción: error 14");
+	}
+}
+
+
 ?>
 
 
