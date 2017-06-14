@@ -40,6 +40,7 @@
 					<ul class="submenu">
 						<li><a href="index.php?sec=adduser">Añadir miembro</a></li>
 						<li><a href="index.php?sec=editarusuarios">Editar usuario</a></li>
+						<li><a href="">Borrar usuario</a></li>
 			  		</ul>
 				</li>
 				<li><a href="index.php?sec=verlog">Ver log</a></li>
