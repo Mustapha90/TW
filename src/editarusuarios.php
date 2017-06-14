@@ -85,9 +85,7 @@ $res = dbConnect("SELECT * FROM usuarios");
    		 <p>No hay resultados.</p>
 	<?php endif; ?>
 
-	</div>
-
-
+</div>
 
 
 
