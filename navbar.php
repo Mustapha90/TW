@@ -16,13 +16,13 @@
 		<ul class="mainmenu">
 			<li><a>Administrar publicaciones</a>
 				<ul class="submenu">
-					<li><a href="index.php?sec=adduser">Añadir pubublicación</a></li>
+					<li><a href="index.php?sec=addpub">Añadir pubublicación</a></li>
 					<li><a href="">Editar publicaciones</a></li>
 				</ul>		
 			</li>
 			<li><a>Administrar proyectos</a>
 				<ul class="submenu">
-					<li><a href="index.php?sec=adduser">Añadir proyecto</a></li>
+					<li><a href="index.php?sec=addproyecto">Añadir proyecto</a></li>
 					<li><a href="">Editar proyectos</a></li>
 				</ul>					
 			</li>
