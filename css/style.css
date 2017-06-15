@@ -97,9 +97,13 @@ body,html{margin:0px;}
 
 
 					#btnDelete{ background-color: red; border: none; color: white; padding: 7px 17px; text-align: center; text-decoration: none; display: inline-block; font-size: 11px; margin: 2px 1px; cursor: pointer; border-radius: 4px; }
-					#btnEditar{ background-color: #4CAF50; border: none; color: white; padding: 7px 19px; text-align: center; text-decoration: none; display: inline-block;
+					#btnEditar{ background-color: #4CAF50; border: none; color: white; padding: 6px 19px; text-align: center; text-decoration: none; display: inline-block;
 								font-size: 11px; margin: 2px 1px; padding-right: 25px; cursor: pointer; border-radius: 4px;}
-					
+					#btnBloquear{ background-color: darkblue; border: none; color: white; padding: 7px 14px; text-align: center; text-decoration: none; display: inline-block;
+								font-size: 11px; margin: 2px 1px;  cursor: pointer; border-radius: 4px;}
+					#btnDesbloquear{ background-color: darkblue; border: none; color: white; padding: 7px 5px; text-align: center; text-decoration: none; display: inline-block;
+								font-size: 11px; margin: 2px 1px;  cursor: pointer; border-radius: 4px;}
+
 					#backup_content{float:left; width: 100%; height: 60px;margin-top:20px}
 					#backup_content2{float:left; width: 100%; height: 60px;margin-top:20px}
 					#backuptext1{float:left; width:56%; height: 50px; margin-left: 8%; }
