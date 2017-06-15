@@ -6,7 +6,7 @@ function addInput(divName){
      }
      else {
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "Investigador " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
+          newdiv.innerHTML = "Nombre investigador " + (counter + 1) + ":" +" <br><input type='text' name='myInputs[]'>";
           document.getElementById(divName).appendChild(newdiv);
           counter++;
      }

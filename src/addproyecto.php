@@ -20,8 +20,10 @@ $investigadores = $_POST['myInputs'];
 
 echo $investigadores[0];
 
+echo $_POST['miembros'];
 
-$insert = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacomienzo, fechafin, entidades, cuantia, investigador, investigadores, url) VALUES ('$codpro','$titulo','$descripcion','$fechacomienzo', '$fechafin', '$entidades', '$cuantia', '$investigador', '$investigadores', '$url')");
+
+$insert = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacomienzo, fechafin, entidades, cuantia, investigador, url) VALUES ('$codpro','$titulo','$descripcion','$fechacomienzo', '$fechafin', '$entidades', '$cuantia', '$investigador', '$url')");
 
 		if(!$insert){
 			die("No se ha podido añadir el proyecto: ");
@@ -31,7 +33,8 @@ $insert = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacom
 
 
 else{
-	include("html/addproyecto.html");
+	$res = dbConnect("SELECT nombre, apellidos, email from usuarios");
+	include("src/formproyecto.php");
 }
 
 
