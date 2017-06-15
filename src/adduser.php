@@ -97,7 +97,7 @@
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 
-	if ($_FILES["fileToUpload"]["size"] > 50) {
+	if ($_FILES["fileToUpload"]["size"] > 500000) {
 		$imageError=  "El tamaño del fichero supera el tamaño máximo.";
 		$errores = 1;
 	}

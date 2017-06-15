@@ -1,46 +1,58 @@
+
 <?php
+
 
 require 'dbConnect.php';
 
-$res = dbConnect("SELECT * FROM acciones ORDER BY fecha DESC , hora DESC");
 
+
+$limit = 20;
+$sql = "SELECT COUNT(*) FROM acciones";  
+
+$res = dbConnect($sql);
+
+$row = mysqli_fetch_row($res);  
+$total_records = $row[0];  
+$total_pages = ceil($total_records / $limit); 
 ?>
 
 <h3>Log</h3>
 </div>
 
-
-
 <div id="centro_content">
-  	<?php if ($res->num_rows > 0): ?>
-   	<table id="mgusuariosta">
-     <tr>
-       <th>Acción</th>
-       <th>Usuario</th>
-       <th>IP</th>
-       <th>Fecha</th>
-       <th>Hora</th>
-     </tr>
-	
-	<?php while($row = $res->fetch_assoc()) : ?>
-	<tr>
-      	<td><?php echo($row["tipo"]);?></td>
-       	<td><?php echo($row["email"]);?></td>
-       	<td><?php echo($row["ip"]);?></td>
-       	<td>
-			<?php 
-				$fecha=date_create($row["fecha"]);
-				echo(date_format($fecha,"d/m/Y"));
-			?>
-		</td>
-       	<td><?php echo($row["hora"]);?></td>
-     </tr>
-     <?php endwhile; ?> 	
-   </table>
+<div id="target-content" ></div>
 
-	<?php else: ?>
-   		 <p>El log está vacío.</p>
-	<?php endif; ?>
+<?php if ($res->num_rows > 0): ?>
+		<div id="center">
+  			<div id="pagination">
+          			    
+           			<?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
+            		if($i == 1):?>
+            			<li class='active'  id="<?php echo $i;?>"> <a href='src/paginadorLog.php?page=<?php echo $i;?>'> <?php echo $i;?></a></li>
+            		<?php else:?>
+            			<li id="<?php echo $i;?>"><a href='src/paginadorLog.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
+        			<?php endif;?>
 
+        			
+	<?php endfor;endif;?>
+
+			  </div>
+		</div>  
+
+			<script>
+				jQuery(document).ready(function() {
+				jQuery("#target-content").load("src/paginadorLog.php?page=1");
+    			jQuery("#pagination li").live('click',function(e){
+    			e.preventDefault();
+        		jQuery("#pagination li").removeClass('active');
+        		jQuery(this).addClass('active');
+       			var pageNum = this.id;
+        		jQuery("#target-content").load("src/paginadorLog.php?page=" + pageNum);
+   				 });
+   			 });
+			</script>
+<?php else: ?>
+   	<p>El log está vacío...</p>
+<?php endif; ?>
 </div>
 
