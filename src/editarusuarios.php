@@ -68,9 +68,9 @@ $res = dbConnect("SELECT * FROM usuarios");
 			   onsubmit="return confirm('Estas seguro que desea bloquear el acceso a este usuario?');">
 			  <input type="hidden" name="act" value="run">
   					<?php if ($row["bloqueado"]==0): ?>
-			  				<input id="btnDelete" name="btnDelete" type="submit" value="Bloquear"/>
+			  				<button id="btnBloquear">Bloquear</button>
 					<?php else: ?>
-			  				<input id="btnDelete" name="btnDelete" type="submit" value="Desbloquear"/>
+			  				<button id="btnDesbloquear">Desbloquear</button>
 					<?php endif; ?>
 			</form>
 		</td>
