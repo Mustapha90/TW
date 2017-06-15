@@ -2,7 +2,7 @@
 
 require 'dbConnect.php';
 
-
+$target_dir = "images/";
 
 $email = $_GET["user"];
 
@@ -16,13 +16,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$centro=$_POST['centromus'];
 	$instituto=$_POST['instituto']; 
 	$direccion=$_POST['direccion'];
+
 	if(isset($_POST['admin']))
 		$admin=1;	
 	else
 		$admin=0;	
 
-
-	$sql = "UPDATE usuarios SET nombre='$nombre', 
+	if(is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
+		$imagen = $email . "_" . basename($_FILES["fileToUpload"]["name"]);
+		$target_file = $target_dir . $imagen;
+		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+		if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+			echo "Sorry, there was an error uploading your file.";
+		} 
+		$sql = "UPDATE usuarios SET nombre='$nombre', imagen='$imagen', 
 								apellidos='$apellidos',
 								categoria='$categoria',
 								telefono='$telefono',
@@ -31,6 +38,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								centro='$centro',
 								instituto='$centro', 
 								direccion='$direccion', admin='$admin' WHERE email='$email'";
+	}
+	else{
+		$sql = "UPDATE usuarios SET nombre='$nombre', 
+								apellidos='$apellidos',
+								categoria='$categoria',
+								telefono='$telefono',
+								url='$url',
+								departamento='$departamento', 
+								centro='$centro',
+								instituto='$centro', 
+								direccion='$direccion', admin='$admin' WHERE email='$email'";
+	}
+
+
 
 	$res = dbConnect($sql);
 	registrarAccion("Editar usuario", $_SESSION['username']);
@@ -127,6 +148,11 @@ else{
 
 		<label for="admin">Otorgar privelegios de aministrador:</label>
  		<input type="checkbox" name="admin" value="admin"><br>
+		<br>
+
+		<label for="foto">Fotografía:</label>
+		<input type="file" name="fileToUpload" id="fileToUpload">
+		<br>
 		<br>
 
 		<div id="lower">

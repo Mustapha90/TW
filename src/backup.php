@@ -27,8 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 
-<!--				
-			<h4 id="backup_h4">el backup se ha realizado correctamente : <?php /*?> <?php echo $file?> <a href="<?php echo $filename?>"> <?php */?> <button id="btnbackup">Descargar backup</button> </a> </h4>	-->
 
 <div id="centro_content">
 

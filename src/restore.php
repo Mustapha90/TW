@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if(validarFichero($target_file)==0){
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 			$cmd = "mysql -h {$server_name} -u {$username} -p{$password} {$database_name} < $target_file";
-			exec($cmd);
+			echo exec($cmd);
 			$success = true;
 		} else {
 			echo "Error: No se ha podido subir el archivo al servidor en estos momentos!";
