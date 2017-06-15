@@ -16,14 +16,12 @@
 				<ul class="submenu">
 					<li><a href="index.php?sec=adduser">Añadir pub</a></li>
 					<li><a href="">Editar pub</a></li>
-					<li><a href="">Borrar pub</a></li>
 				</ul>		
 			</li>
 			<li><a href="index.php?sec=addproyecto">Añadir proyecto</a>
 				<ul class="submenu">
 					<li><a href="index.php?sec=adduser">Añadir proyecto</a></li>
 					<li><a href="">Editar proyecto</a></li>
-					<li><a href="">Borrar proyecto</a></li>
 				</ul>					
 			</li>
 		</ul>						

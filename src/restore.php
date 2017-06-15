@@ -56,7 +56,7 @@ function validarFichero($target_file){
 
 <div id="centro_content">
 	<?php if($success): ?>
-		<h2>La copia de seguridad se ha realizado correctamente!</h2>
+		<h4>La copia de seguridad se ha realizado correctamente!</h4>
 	<?php else: ?>
 		<form action="" method="post" enctype="multipart/form-data">
 			<div id="cont">
