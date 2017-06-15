@@ -10,6 +10,8 @@
 
 	<div id="espacio"></div>
 	
+
+	<?php if(isset($_SESSION['loggedin'])) : ?>
 	<div id="nav2">
 		<ul class="mainmenu">
 			<li><a href="index.php?sec=addpub" >Añadir pub</a>
@@ -26,7 +28,7 @@
 			</li>
 		</ul>						
 	</div>
-
+	<?php endif; ?>
 	<div id="espacio"></div>
 	
 
