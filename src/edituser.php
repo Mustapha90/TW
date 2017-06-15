@@ -72,9 +72,9 @@ else{
 
 <?php if($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
 	<?php if($res===TRUE) : ?>
-		<p>Los cambios se han guardado correctamente!</p>
+		<p>Los cambios se han guardado correctamente! <a href="index.php?sec=editarusuarios"> volver</a> </p>
 	<?php else: ?>
-		<p>No ha sido posible guardar los cambios realizados!</p>
+		<p>No ha sido posible guardar los cambios realizados! <a href="index.php?sec=editarusuarios"> volver</a> </p>
 	<?php endif; ?>
 
 <?php else: ?>

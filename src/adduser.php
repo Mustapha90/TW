@@ -4,6 +4,7 @@
 
 
 <div id="centro_content">
+<div id="registerOK">
 	<?php
 
 
@@ -122,11 +123,9 @@
 		else
 			$admin=0;	
 			
-		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-		} else {
-			echo "Sorry, there was an error uploading your file.";
-		}
+		if (!(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))) {
+			echo "Ha habido un error al subir la foto";
+		} 
 
 		$insert = dbConnect("INSERT INTO usuarios (nombre, email, password,admin, apellidos, categoria, telefono, url, departamento, centro, instituto, direccion, imagen) VALUES ('$nombre','$email','$hash','$admin', '$apellidos', '$categoria', '$telefono', '$url', '$departamento', '$centro', '$instituto', '$direccion', '$imagen')");
 
@@ -134,8 +133,8 @@
 			die("No se ha podido registrar el usuario: ");
 		}
 			registrarAccion("Añadir miembro", $_SESSION['username']);
-			echo $nombre.", you are now registered. Thank you!<br><a href=login.php>Login</a> | <a href=index.php>Index</a>";		
-
+		
+			echo "<br>" . $nombre. " ha sido añadido correctamente como miembro";		
 	}
 
 

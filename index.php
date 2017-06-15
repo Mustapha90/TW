@@ -11,6 +11,8 @@ ini_set('display_errors', 'On');
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<!-- jQuery -->
 	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
 	<title>GRUPO DE INSVESTIGACION MB</title>

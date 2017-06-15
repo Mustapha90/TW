@@ -16,9 +16,9 @@ registrarAccion("Eliminar usuario", $_SESSION['username']);
 <div id="centro_content">
 
 	<?php if ($res == TRUE): ?>
-		<p>Se ha eliminado el usuario correctamente</p>
+		<p>Se ha eliminado el usuario correctamente <a href="index.php?sec=editarusuarios"> volver</a></p>
 	<?php else: ?>
-		<p>No se ha podido eliminar el usuario</p>		
+		<p>No se ha podido eliminar el usuario <a href="index.php?sec=editarusuarios"> volver</a> </p>		
 	<?php endif; ?>
 
 
