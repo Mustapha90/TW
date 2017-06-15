@@ -83,8 +83,7 @@ else{
 	
 	<div id="formImagen">
 		<div id="foto_miembroeditar">
-
-			<img src="images/jbaena.jpg" alt="Mountain View" style="width:100%;height:100%;">
+			<img src="images/<?php echo($row["imagen"]);?>" alt="Mountain View" style="width:100%;height:100%;">
 									<label for="foto">Cambiar foto:</label>
 
 									<input type="file" name="fileToUpload" id="fileToUpload">
@@ -164,7 +163,8 @@ else{
 		<br>
 
 		<label for="admin">Otorgar privelegios de aministrador:</label>
- 		<input type="checkbox" name="admin" value="admin"><br>
+ 		<input type="checkbox" name="admin" value="admin"<?php if($row["admin"]) echo "checked";?>> 
+		<br>
 		<br>
 
 
