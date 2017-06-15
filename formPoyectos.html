@@ -11,7 +11,18 @@
 
 <div id="containerRegistro">
 	<form action='' method='post' enctype="multipart/form-data">
-
+	<div id="formImagen">
+		<div id="foto_miembroeditar">
+			<img src="images/jbaena.jpg" alt="Mountain View" style="width:100%;height:100%;">
+		</div>
+		<label for="foto">Fotografía:</label>
+		<input type="file" name="fileToUpload" id="fileToUpload">
+		<div id="labelfoto" class="errorlabel"<label for="passError"><?php echo $imageError;?></label></div><br>
+		
+		
+	</div>
+	<div id="formDatos">
+	
 		<label for="username">Nombre:</label>
 		<input class="login" type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
 
@@ -25,7 +36,7 @@
 			  <option value="Titular">Titular</option>
 			  <option value="Catedrático">Catedrático</option>
 			  <option value="Ayudante">Ayudante</option>
-			</select>
+		</select>
 
 
 		<label for="email">Teléfono de contacto:</label>
@@ -52,6 +63,9 @@
 		<br>
 
 
+
+
+
 		<label for="departamento">Departamento:</label>
 		<input class="login" type="text" id="departamento" name="departamento" value="<?php echo $departamento;?>">
 		<br>
@@ -72,16 +86,18 @@
 		<br>
 
 
-		<label for="foto">Fotografía:</label>
-		<input type="file" name="fileToUpload" id="fileToUpload">
-		<div class="errorlabel"<label for="passError"><?php echo $imageError;?></label></div><br>
+		<label for="admin">Otorgar privelegios de aministrador:</label>
+ 		<input type="checkbox" name="admin" value="admin"><br>
+		<br>
+
+
+
 
 
 		<div id="lower">
-			<a href="http://sibw.com/index.php?sec=login" class="small">¿Ya eres miembro? Iniciar sesión</a>
 			<input class="login" type="submit" value="Regístrate">
 		</div>
-
+	</div>
 	</form>
 	
 </div>

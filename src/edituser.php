@@ -80,6 +80,23 @@ else{
 <?php else: ?>
 <div id="containerRegistro">
 	<form action='' method='post' enctype="multipart/form-data">
+	
+	<div id="formImagen">
+		<div id="foto_miembroeditar">
+
+			<img src="images/jbaena.jpg" alt="Mountain View" style="width:100%;height:100%;">
+									<label for="foto">Cambiar foto:</label>
+
+									<input type="file" name="fileToUpload" id="fileToUpload">
+
+
+		</div>
+
+		
+
+	</div>
+	
+		<div id="formDatos">
 
 		<label for="username">Nombre:</label>
 		<input class="login" type="text" id="nombre" name="nombre" value="<?php echo($row["nombre"]);?>">
@@ -150,13 +167,12 @@ else{
  		<input type="checkbox" name="admin" value="admin"><br>
 		<br>
 
-		<label for="foto">Fotografía:</label>
-		<input type="file" name="fileToUpload" id="fileToUpload">
-		<br>
-		<br>
+
 
 		<div id="lower">
 			<input class="login" type="submit" value="Guardar cambios">
+		</div>
+		
 		</div>
 
 	</form>
