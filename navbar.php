@@ -1,6 +1,6 @@
 <nav id="navbar"> 
 	<div id="nav1">
-	  <ul>
+	  <ul class="mainmenu">
 			<li><a class="active" href="index.php?sec=portada">Principal</a></li>
 			<li><a href="index.php?sec=miembros">Miembros</a></li>
 			<li><a href="index.php?sec=publicaciones">Publicaciones</a></li>
@@ -14,16 +14,16 @@
 	<?php if(isset($_SESSION['loggedin'])) : ?>
 	<div id="nav2">
 		<ul class="mainmenu">
-			<li><a href="index.php?sec=addpub" >Añadir pub</a>
+			<li><a>Administrar publicaciones</a>
 				<ul class="submenu">
-					<li><a href="index.php?sec=adduser">Añadir pub</a></li>
-					<li><a href="">Editar pub</a></li>
+					<li><a href="index.php?sec=addpub">Añadir pubublicación</a></li>
+					<li><a href="">Editar publicaciones</a></li>
 				</ul>		
 			</li>
-			<li><a href="index.php?sec=addproyecto">Añadir proyecto</a>
+			<li><a>Administrar proyectos</a>
 				<ul class="submenu">
-					<li><a href="index.php?sec=adduser">Añadir proyecto</a></li>
-					<li><a href="">Editar proyecto</a></li>
+					<li><a href="index.php?sec=addproyecto">Añadir proyecto</a></li>
+					<li><a href="">Editar proyectos</a></li>
 				</ul>					
 			</li>
 		</ul>						
@@ -36,10 +36,10 @@
 	<?php if(isset($_SESSION['loggedin']) and $_SESSION['admin']==1) : ?>
 		<div id="nav1">
 			<ul class="mainmenu">
-				<li><a>Editar usuarios</a>
+				<li><a>Administrar miembros</a>
 					<ul class="submenu">
 						<li><a href="index.php?sec=adduser">Añadir miembro</a></li>
-						<li><a href="index.php?sec=editarusuarios">Editar usuario</a></li>
+						<li><a href="index.php?sec=editarusuarios">Editar miembro</a></li>
 			  		</ul>
 				</li>
 				<li><a href="index.php?sec=log">Ver log</a></li>

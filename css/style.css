@@ -80,13 +80,13 @@ body,html{margin:0px;}
 															border-radius: 4px; cursor: pointer;}
 
 					#containerRegistro input[type=submit]:hover { background-color: #3152BC;}
-registrarOK{float:left; width: 70%; height: 10%; margin: 8% 0% 0% 8%; background-color:yellow}
+					.textinput { float:left; width: 99.2%; min-height: 200px; outline: none; resize: none; border: 1px solid #ccc; border-radius: 8px;}
 
-					#mgusuariosta { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; font-size:75% }
-					#mgusuariosta td, #mgusuariosta th { border: 1px solid #4E0DE7; padding: 8px;}
+					#mgusuariosta { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; font-size:75% ;}
+					#mgusuariosta td, #mgusuariosta th { border: 1px solid #4E0DE7; padding: 8px; word-wrap: break-word;}
 					#mgusuariosta tr:nth-child(even){background-color: #f2f2f2;}
 					#mgusuariosta tr:hover {background-color: #ddd;}
-					#mgusuariosta th {	padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: darkblue; color: white; }
+					#mgusuariosta th {padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: darkblue; color: white; }
 
 					#center { text-align: center; }
 					#pagination { margin-top:2%; list-style: none; display: inline-block; }
