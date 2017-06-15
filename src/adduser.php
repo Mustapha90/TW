@@ -40,6 +40,7 @@
 	$direccion='';
 	$imagen='';
 	$admin='';
+	$success=0;
 
 
 	function validateForm(){
@@ -115,7 +116,7 @@
 
 
 	function register(){
-		global $nombre, $email, $password, $nombre, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen, $admin;
+		global $nombre, $email, $password, $nombre, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen, $admin, $success;
 		$hash = password_hash($password, \PASSWORD_DEFAULT);
 
 		if(isset($_POST['admin']))
@@ -134,8 +135,8 @@
 		}
 			registrarAccion("Añadir miembro", $_SESSION['username']);
 		
-			echo "<br>" . $nombre. " ha sido añadido correctamente como miembro";		
-	}
+			$success = 1;
+	   }
 
 
 	if(isset($_GET['act'])=='register') {
@@ -152,6 +153,9 @@
 
 
 	?>
-	
+
+	<?php if($success): ?>
+		<h4>El usuario se ha registrado correctamente!</h4>
+	<?php endif; ?>
 	
 </div>
