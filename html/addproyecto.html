@@ -2,51 +2,53 @@
 </div>
 
 
-
-
 <div id="centro_content">
 	
 <div id="containerRegistro">	
 
-
 	<form action="" method="post" enctype="multipart/form-data">
-	
-	
-	
 		<label for="codpro">Código del proyecto:</label>
 		<input class="login" type="text" id="codpro" name="codpro" >
 
 
 		<label for="titulopro">Título:</label>
-		<input class="login" type="text" id="titulopro" name="titulopro" >
+		<input class="login" type="text" id="titulo" name="titulo" >
 
 
 		<label for="descripro">Descripción:</label><br><br>
-
-		<textarea class="textinput"> </textarea>
+		<textarea class="textinput" id="descripcion" name="descripcion"></textarea>
 
 
 		<label for="fechaproc">Fecha de comienzo:</label><br><br>
-		<input class="login" type="date" name="fechaproc">
+		<input class="login" type="date" id="fechacomienzo" name="fechacomienzo">
 		<br>
 
 		<label for="fechaprof">Fecha de finalización:</label><br><br>
-		<input class="login" type="date" name="fechaprof">
+		<input class="login" type="date" id="fechafin" name="fechafin">
 		<br><br>	
 		
 		<label for="entidadcol">Entidades colaboradoras:</label>
-		<input class="login" type="text" id="entidadcol" name="entidadcol">
+		<input class="login" type="text" id="entidades" name="entidades">
 		<br>		
 		
 		<label for="cuantipro">Cuantía concedida:</label><br><br>		
-		<input type="number" name="cuantiapro" min="1" max="20000">
+		<input type="number" id="cuantia" name="cuantia" min="1" max="20000">
 		<br><br>
 
 		<label for="titulopro">Investigador principal:</label>
-		<input class="login" type="text" id="invespri" name="invespri" >
+		<input class="login" type="text" id="investigador" name="investigador">
 
-		<label for="titulopro">Investigadores colaboradores:</label>
-		<input class="login" type="text" id="invescol" name="invescol">
+
+		<label for="titulopro">Investigadores colaboradores:</label><br><br>
+<script src="js/addInput.js" language="Javascript" type="text/javascript"></script>
+
+     <div id="dynamicInput">
+          Investigador 1<br><input type="text" name="myInputs[]">
+     </div>
+     <input type="button" value="Añadir investigador" onClick="addInput('dynamicInput');">
+
+
+<br><br>
 		
 		<label for="url">URL:</label>
 		<input class="login" type="text" id="url" name="url" >

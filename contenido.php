@@ -19,7 +19,7 @@ switch ($seccion) {
         include 'html/addpub.html';
         break;
 	case 'addproyecto':
-        include 'html/addproyecto.html';
+        include 'src/addproyecto.php';
         break;
 	case 'editarusuarios':
         include 'src/editarusuarios.php';
