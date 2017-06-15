@@ -30,8 +30,8 @@ registrarAccion("Bloquear usuario", $_SESSION['username']);
 <div id="centro_content">
 
 	<?php if ($res == TRUE): ?>
-		<p>El usuario <?php echo($email);?> ha sido <?php echo($accion);?> correctamente!</p>
+		<p>El usuario <?php echo($email);?> ha sido <?php echo($accion);?> correctamente! <a href="index.php?sec=editarusuarios"> volver</a> </p>
 	<?php else: ?>
-		<p>No se ha podido bloquear el usuario <?php echo($email);?>!</p>		
+		<p>No se ha podido bloquear el usuario <?php echo($email);?>! <a href="index.php?sec=editarusuarios"> volver</a> </p>		
 	<?php endif; ?>
 </div>

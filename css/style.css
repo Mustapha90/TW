@@ -6,13 +6,13 @@ body,html{margin:0px;}
 
 #global {width:100%; margin: 0px; padding: 0px; background-color:black;}
 
-	#contenido {width: 1280px; margin:0 auto;  height: auto; }
+	#contenido {width:85%; margin:0 auto;  height: auto; }
 
 		#cabeceraglobal { float:left; width:100%; height: 125px; background-color:darkblue; margin-top: 2px}
 			#titulo {float:left; margin: 40px 60px; color:white}
 		
 		#menu { float: left; background-color: #efede6; color:black; width: 100%; height: 40px;}
-			#menuleft { float:left; width:50%; height: 100%;}
+			#menuleft { float:left; width:40%; height: 100%;}
 				#search {float:left; width:70%; height: 70%; margin-left: 2px}
 				#search form { border: 3px solid #efede6; }
 				#search input[type=text], input[type=password] { width: 40%; padding: 8px 20px; margin: 2px 0; display: inline-block; border: 1px solid #ccc;
@@ -21,9 +21,9 @@ body,html{margin:0px;}
 				#search button:hover { opacity: 0.8; }
 			
 			
-			#menuright { float:left; width: 50%; height: 100%; }
+			#menuright { float:left; width: 60%; height: 100%; }
 				#menurighterror{float:left; width: 30%; height: 70%; color:red; font-size:80%; margin: 13px 2px 0px 50px}
-				#menurightbienvenido{float:right; margin: 13px}
+				#menurightbienvenido{float:right; margin: 2%}
 				#loginform { float:right; width: 60%; height: 70%; margin-right: 2px}
 				#loginform form { border: 3px solid #efede6; }
 				#loginform input[type=text], input[type=password] { width: 40%; padding: 8px 20px; margin: 2px 0; display: inline-block; border: 1px solid #ccc;
@@ -80,7 +80,7 @@ body,html{margin:0px;}
 															border-radius: 4px; cursor: pointer;}
 
 					#containerRegistro input[type=submit]:hover { background-color: #3152BC;}
-
+registrarOK{float:left; width: 70%; height: 10%; margin: 8% 0% 0% 8%; background-color:yellow}
 
 					#mgusuariosta { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; font-size:75% }
 					#mgusuariosta td, #mgusuariosta th { border: 1px solid #4E0DE7; padding: 8px;}
@@ -89,7 +89,7 @@ body,html{margin:0px;}
 					#mgusuariosta th {	padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: darkblue; color: white; }
 
 					#center { text-align: center; }
-					#pagination { margin-top:10%; list-style: none; display: inline-block; }
+					#pagination { margin-top:2%; list-style: none; display: inline-block; }
 					#pagination li{ float:left; }
 					#pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; border: 1px solid #ddd; margin: 0 4px;}
 					.active a { background-color: darkblue; color: white; border: 1px solid #4CAF50; }
