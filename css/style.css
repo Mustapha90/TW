@@ -80,7 +80,7 @@ body,html{margin:0px;}
 															border-radius: 4px; cursor: pointer;}
 
 					#containerRegistro input[type=submit]:hover { background-color: #3152BC;}
-					.textinput { float:left; width: 99.2%; min-height: 200px; outline: none; resize: none; border: 1px solid #ccc; border-radius: 8px;}
+					.textinput { float:left; width: 99.2%; min-height: 200px; outline: none; resize: none; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 3%}
 
 					#mgusuariosta { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; font-size:75% ;}
 					#mgusuariosta td, #mgusuariosta th { border: 1px solid #4E0DE7; padding: 8px; word-wrap: break-word;}
