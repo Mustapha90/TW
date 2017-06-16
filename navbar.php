@@ -1,5 +1,4 @@
 				
-<div class="col-2 menu">
 
   <ul>
 	  <ul>
@@ -45,6 +44,5 @@
 		</div>
   	<?php endif; ?>
 
-</div>
 
 				
