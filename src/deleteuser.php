@@ -14,16 +14,17 @@ registrarAccion("Eliminar usuario", $_SESSION['username']);
 </div>
 
 <div id="centro_content">
+	<div id="centro_content2">
 
-	<?php if ($res == TRUE): ?>
-		<p>Se ha eliminado el usuario correctamente <a href="index.php?sec=editarusuarios"> volver</a></p>
-	<?php else: ?>
-		<p>No se ha podido eliminar el usuario <a href="index.php?sec=editarusuarios"> volver</a> </p>		
-	<?php endif; ?>
+		<?php if ($res == TRUE): ?>
+			<p>Se ha eliminado el usuario correctamente <a href="index.php?sec=editarusuarios"> volver</a></p>
+		<?php else: ?>
+			<p>No se ha podido eliminar el usuario <a href="index.php?sec=editarusuarios"> volver</a> </p>		
+		<?php endif; ?>
 
 
    
- 
+	</div> 
 </div>
 
 

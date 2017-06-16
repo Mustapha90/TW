@@ -4,7 +4,6 @@
 
 
 <div id="centro_content">
-<div id="registerOK">
 	<?php
 
 
@@ -155,7 +154,9 @@
 	?>
 
 	<?php if($success): ?>
-		<h4>El usuario se ha registrado correctamente!</h4>
+	<div id="centro_content2">
+		<h4>El usuario se ha registrado correctamente!</h4>		
+	</div>
 	<?php endif; ?>
 	
 </div>

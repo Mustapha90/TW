@@ -35,17 +35,22 @@ ini_set('display_errors', 'On');
 	<div id="global">
 		<div id="contenido">
 			<?php include 'header.php';?>
+			<div class="row">
 
-			<div id="centro">
+				<div id="centro">
+						<?php include 'navbar.php';?>
+					
+
+					<div class="col-10">
+						<?php include 'contenido.php';?>
+					</div>
+				</div>
+				
+			</div>
 			
-				<?php include 'navbar.php';?>
-
-
-				<?php include 'contenido.php';?>
-
-		  	</div>
-		  	
-			<?php include 'footer.php';?>
+			<div class="footer">
+				<?php include 'footer.php';?>
+			</div>
 			
 		</div>
 	</div>

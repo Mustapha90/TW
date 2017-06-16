@@ -55,6 +55,8 @@ function validarFichero($target_file){
 
 
 <div id="centro_content">
+<div id="centro_content2">
+
 	<?php if($success): ?>
 		<h4>La copia de seguridad se ha realizado correctamente!</h4>
 	<?php else: ?>
@@ -69,6 +71,7 @@ function validarFichero($target_file){
 		    
 		    
 	<?php endif; ?>
+</div>
 </div>
 
 
