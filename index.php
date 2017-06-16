@@ -34,19 +34,24 @@ ini_set('display_errors', 'On');
 
 	<div id="global">
 		<div id="contenido">
-			<?php include 'header.php';?>
+		
+			<div class="header">
+				<?php include 'header.php';?>
+			</div>
+			
+			
 			<div class="row">
-
-				<div id="centro">
+				
+					<div class="col-2 menu">
 						<?php include 'navbar.php';?>
-					
+					</div>
 
 					<div class="col-10">
 						<?php include 'contenido.php';?>
-					</div>
-				</div>
-				
+					</div>	
+								
 			</div>
+			
 			
 			<div class="footer">
 				<?php include 'footer.php';?>
