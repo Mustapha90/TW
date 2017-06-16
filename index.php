@@ -17,6 +17,8 @@ ini_set('display_errors', 'On');
 	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
 	<title>GRUPO DE INSVESTIGACION MB</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/jquery.multiselect.css" type="text/css" media="screen"/>
+
 </head>
 
 

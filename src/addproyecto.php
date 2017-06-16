@@ -16,22 +16,40 @@ $cuantia= $_POST['cuantia'];
 $investigador= $_POST['investigador'];
 
 $url= $_POST['url'];
-$investigadores = $_POST['myInputs'];
-
-echo $investigadores[0];
-
-echo $_POST['miembros'];
+$inv_externos = $_POST['myInputs'];
+$colabs = $_POST['multicheckbox'];
 
 
-$insert = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacomienzo, fechafin, entidades, cuantia, investigador, url) VALUES ('$codpro','$titulo','$descripcion','$fechacomienzo', '$fechafin', '$entidades', '$cuantia', '$investigador', '$url')");
+$insert1 = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacomienzo, fechafin, entidades, cuantia, investigador, url) VALUES ('$codpro','$titulo','$descripcion','$fechacomienzo', '$fechafin', '$entidades', '$cuantia', '$investigador', '$url')");
 
-		if(!$insert){
+		if(!$insert1){
 			die("No se ha podido añadir el proyecto: ");
 		}
-			registrarAccion("Añadir Proyecto", $_SESSION['username']);
-	   }
 
 
+foreach ($colabs as $colaborador) {
+	$insert2 = dbConnect("INSERT INTO colaboradoresmiembros (email, codpro) VALUES ('$colaborador','$codpro')");
+
+		if(!$insert2){
+			die("No se ha podido añadir el proyecto: ");
+		}
+}
+
+
+
+foreach ($inv_externos as $col) {
+	$insert3 = dbConnect("INSERT INTO colaboradoresexternos (nombrecompleto, codpro) VALUES ('$col','$codpro')");
+
+		if(!$insert3){
+			die("No se ha podido añadir el proyecto: ");
+		}
+}
+
+
+		registrarAccion("Añadir Proyecto", $_SESSION['username']);
+	
+
+}
 else{
 	$res = dbConnect("SELECT nombre, apellidos, email from usuarios");
 	include("src/formproyecto.php");
