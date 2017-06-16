@@ -18,9 +18,10 @@ $investigador= $_POST['investigador'];
 $url= $_POST['url'];
 $inv_externos = $_POST['myInputs'];
 $colabs = $_POST['multicheckbox'];
+$entidades = $_POST['entidades'];
 
 
-$insert1 = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacomienzo, fechafin, entidades, cuantia, investigador, url) VALUES ('$codpro','$titulo','$descripcion','$fechacomienzo', '$fechafin', '$entidades', '$cuantia', '$investigador', '$url')");
+$insert1 = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacomienzo, fechafin, cuantia, investigador, url) VALUES ('$codpro','$titulo','$descripcion','$fechacomienzo', '$fechafin', '$cuantia', '$investigador', '$url')");
 
 		if(!$insert1){
 			die("No se ha podido añadir el proyecto: ");
@@ -29,24 +30,21 @@ $insert1 = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechaco
 
 foreach ($colabs as $colaborador) {
 	$insert2 = dbConnect("INSERT INTO colaboradoresmiembros (email, codpro) VALUES ('$colaborador','$codpro')");
-
-		if(!$insert2){
-			die("No se ha podido añadir el proyecto: ");
-		}
 }
 
 
 
 foreach ($inv_externos as $col) {
 	$insert3 = dbConnect("INSERT INTO colaboradoresexternos (nombrecompleto, codpro) VALUES ('$col','$codpro')");
-
-		if(!$insert3){
-			die("No se ha podido añadir el proyecto: ");
-		}
 }
 
 
-		registrarAccion("Añadir Proyecto", $_SESSION['username']);
+foreach ($entidades as $entidad) {
+	$insert3 = dbConnect("INSERT INTO entidadescolaboradoras (nombre, codpro) VALUES ('$entidad','$codpro')");
+}
+
+
+registrarAccion("Añadir Proyecto", $_SESSION['username']);
 	
 
 }

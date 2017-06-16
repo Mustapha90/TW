@@ -13,7 +13,7 @@ switch ($seccion) {
         include 'html/publicaciones.html';
         break;
     case 'proyectos':
-        include 'html/proyectos.html';
+        include 'src/proyectos.php';
         break;
 	case 'addpub':
         include 'html/addpub.html';

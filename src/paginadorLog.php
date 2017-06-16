@@ -17,7 +17,7 @@ $res = dbConnect($sql);
 
 ?>
 
-
+<div id="centro_content">
    	<table id="mgusuariosta">
      <tr>
        <th>Acción</th>
@@ -42,4 +42,4 @@ $res = dbConnect($sql);
      </tr>
      <?php endwhile; ?> 	
    </table>
-
+</div>
