@@ -68,16 +68,22 @@ else{
 <div id="centro_content">
 
 
+<div  id="centro_content2" >
+
+	<?php if($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
+		<?php if($res===TRUE) : ?>
+
+			<p>Los cambios se han guardado correctamente! <a href="index.php?sec=editarusuarios"> volver</a> </p>
+		<?php else: ?>
+			<p>No ha sido posible guardar los cambios realizados! <a href="index.php?sec=editarusuarios"> volver</a> </p>
+		<?php endif; ?>
 
 
-<?php if($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
-	<?php if($res===TRUE) : ?>
-		<p>Los cambios se han guardado correctamente! <a href="index.php?sec=editarusuarios"> volver</a> </p>
 	<?php else: ?>
-		<p>No ha sido posible guardar los cambios realizados! <a href="index.php?sec=editarusuarios"> volver</a> </p>
-	<?php endif; ?>
+		
+	
 
-<?php else: ?>
+
 <div id="containerRegistro">
 	<form action='' method='post' enctype="multipart/form-data">
 	
@@ -182,6 +188,7 @@ else{
 <?php endif; ?>
 
 
+</div>
 
  
 </div>

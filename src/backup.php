@@ -29,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 <div id="centro_content">
+<div id="centro_content2">
+
 
 	<?php if($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
 		<div id="backup_content">
@@ -53,10 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-
-
-
- 	
+</div>	
 </div>
 
 
