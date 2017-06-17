@@ -2,9 +2,9 @@
 
 require 'dbConnect.php';
 
-$email = $_GET["user"];
-$res = dbConnect("DELETE FROM usuarios WHERE email='$email'");
-registrarAccion("Eliminar usuario", $_SESSION['username']);
+$email = $_GET[ "user" ];
+$res = dbConnect( "DELETE FROM usuarios WHERE email='$email'" );
+registrarAccion( "Eliminar usuario", $_SESSION[ 'username' ] );
 
 
 
@@ -17,16 +17,13 @@ registrarAccion("Eliminar usuario", $_SESSION['username']);
 	<div id="centro_content2">
 
 		<?php if ($res == TRUE): ?>
-			<p>Se ha eliminado el usuario correctamente <a href="index.php?sec=editarusuarios"> volver</a></p>
+		<p>Se ha eliminado el usuario correctamente <a href="index.php?sec=editarusuarios"> volver</a>
+		</p>
 		<?php else: ?>
-			<p>No se ha podido eliminar el usuario <a href="index.php?sec=editarusuarios"> volver</a> </p>		
+		<p>No se ha podido eliminar el usuario <a href="index.php?sec=editarusuarios"> volver</a> </p>
 		<?php endif; ?>
 
 
-   
-	</div> 
+
+	</div>
 </div>
-
-
-
-

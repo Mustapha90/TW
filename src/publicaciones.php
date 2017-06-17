@@ -24,65 +24,61 @@ $total_pages = ceil($total_records / $limit);
 </div>
 
 <div id="centro_content">
-<div id="containerRegistro">
+	<div id="formBusqueda">
 
-		<div id="formBusqueda">
-			<form action="" method="post" enctype="multipart/form-data">
-				<label>Formulario de búsqueda</label><br><br>
-				<input type="radio" name="pub" value="Tipo" checked> Por tipo
-				<input type="radio" name="pub" value="autor"> Por autor
-				<input type="radio" name="pub" value="fecha"> Por fecha 
-				<input type="radio" name="pub" value="keyword"> Por Palabra clave  <br><br>
+		<form action="" method="post" enctype="multipart/form-data">
+			<label>Formulario de búsqueda</label><br><br>
+			<input type="radio" name="pub" value="Tipo" checked> Por tipo
+			<input type="radio" name="pub" value="autor"> Por autor
+			<input type="radio" name="pub" value="fecha"> Por fecha 
+			<input type="radio" name="pub" value="keyword"> Por Palabra clave  <br><br>
 
-				<div style="float:left; width: 50%; height: 50%;">
-					<input type="text" id="codpro" name="codpro" value="" >
-
-				</div>
-				<div style="float:left; width: 20%; height: 50%;margin-top: 0.8%">
-					<button id="btnBloquear">Buscar</button>
-				</div>
+		<div class="buscar">
+			<input type="text">
+			<input type="submit" value="Buscar">	
+		</div>
 
 
-			</form>
-					
-	</div>	
-</div>
+
+		</form>
+
+	</div>
 
 
-		<label>Listado de publicaciones</label>
-				
-
-		<div id="target-content" ></div>
-
-		<?php if ($res->num_rows > 0): ?>
-				<div id="center">
-					<div id="pagination">  
-							<?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
-							if($i == 1):?>
-								<li class='active'  id="<?php echo $i;?>"> <a href='src/paginadorpubs.php?page=<?php echo $i;?>'> <?php echo $i;?></a></li>
-							<?php else:?>
-								<li id="<?php echo $i;?>"><a href='src/paginadorpubs.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
-							<?php endif;?>
+	<h3 id="listpub">Listado de publicaciones</h3>
 
 
-			<?php endfor;endif;?>
+	<div id="target-content" ></div>
 
-					  </div>
-				</div>  
+	<?php if ($res->num_rows > 0): ?>
+			<div id="center">
+				<div id="pagination">  
+						<?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
+						if($i == 1):?>
+							<li class='active'  id="<?php echo $i;?>"> <a href='src/paginadorpubs.php?page=<?php echo $i;?>'> <?php echo $i;?></a></li>
+						<?php else:?>
+							<li id="<?php echo $i;?>"><a href='src/paginadorpubs.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
+						<?php endif;?>
 
-					<script>
-						jQuery(document).ready(function() {
-						jQuery("#target-content").load("src/paginadorpubs.php?page=1");
-						jQuery("#pagination li").live('click',function(e){
-						e.preventDefault();
-						jQuery("#pagination li").removeClass('active');
-						jQuery(this).addClass('active');
-						var pageNum = this.id;
-						jQuery("#target-content").load("src/paginadorpubs.php?page=" + pageNum);
-						 });
+
+		<?php endfor;endif;?>
+
+				  </div>
+			</div>  
+
+				<script>
+					jQuery(document).ready(function() {
+					jQuery("#target-content").load("src/paginadorpubs.php?page=1");
+					jQuery("#pagination li").live('click',function(e){
+					e.preventDefault();
+					jQuery("#pagination li").removeClass('active');
+					jQuery(this).addClass('active');
+					var pageNum = this.id;
+					jQuery("#target-content").load("src/paginadorpubs.php?page=" + pageNum);
 					 });
-					</script>
-		<?php else: ?>
-			<p>No se encuentran proyectos..</p>
-		<?php endif; ?>
+				 });
+				</script>
+	<?php else: ?>
+		<p>No se encuentran proyectos..</p>
+	<?php endif; ?>
 </div>

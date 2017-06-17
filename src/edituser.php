@@ -90,96 +90,90 @@ else{
 	<div id="formImagen">
 		<div id="foto_miembroeditar">
 			<img src="images/<?php echo($row["imagen"]);?>" alt="Mountain View" style="width:100%;height:100%;">
-									<label for="foto">Cambiar foto:</label>
-
-									<input type="file" name="fileToUpload" id="fileToUpload">
-
-
-		</div>
-
-		
-
+			<label for="foto">Cambiar foto:</label>
+			<input type="file" name="fileToUpload" id="fileToUpload">
+		</div>	
 	</div>
 	
-		<div id="formDatos">
+	<div id="formDatos">
 
-		<label for="username">Nombre:</label>
-		<input class="login" type="text" id="nombre" name="nombre" value="<?php echo($row["nombre"]);?>">
-
-
-		<label for="email">Apellidos:</label>
-		<input class="login" type="text" id="apellidos" name="apellidos" value="<?php echo($row["apellidos"]);?>">
+	<label for="username">Nombre:</label>
+	<input class="login" type="text" id="nombre" name="nombre" value="<?php echo($row["nombre"]);?>">
 
 
+	<label for="email">Apellidos:</label>
+	<input class="login" type="text" id="apellidos" name="apellidos" value="<?php echo($row["apellidos"]);?>">
 
 
 
-		<label for="categoria">Categoría:</label>
-			<select id="categoria" name="categoria">
-			  <option value="Titular"
-					<?php if($row["categoria"]=="Titular"): ?>
-						<?php echo "selected='selected'"?>
-					<?php endif; ?>
-			  >Titular</option>
-			  <option value="Catedrático"
-					<?php if($row["categoria"]=="Catedratico"): ?>
-						<?php echo "selected='selected'"?>
-					<?php endif; ?>
-				>Catedrático</option>
-			  <option value="Ayudante"
-					<?php if($row["categoria"]=="Ayudante"): ?>
-						<?php echo "selected='selected'"?>
-					<?php endif; ?>
-			  >Ayudante</option>
-			</select>
 
 
-		<label for="email">Teléfono de contacto:</label>
-		<input class="login" type="text" id="telefono" name="telefono" value="<?php echo($row["telefono"]);?>">
-		<br>
+	<label for="categoria">Categoría:</label>
+		<select id="categoria" name="categoria">
+		  <option value="Titular"
+				<?php if($row["categoria"]=="Titular"): ?>
+					<?php echo "selected='selected'"?>
+				<?php endif; ?>
+		  >Titular</option>
+		  <option value="Catedrático"
+				<?php if($row["categoria"]=="Catedratico"): ?>
+					<?php echo "selected='selected'"?>
+				<?php endif; ?>
+			>Catedrático</option>
+		  <option value="Ayudante"
+				<?php if($row["categoria"]=="Ayudante"): ?>
+					<?php echo "selected='selected'"?>
+				<?php endif; ?>
+		  >Ayudante</option>
+		</select>
 
 
-		<label for="email">Email:</label>
-		<input class="login" type="text" id="email" name="email" value="<?php echo($row["email"]);?>">
-		<br>
+	<label for="email">Teléfono de contacto:</label>
+	<input class="login" type="text" id="telefono" name="telefono" value="<?php echo($row["telefono"]);?>">
+	<br>
 
 
-		<label for="url">URL personal:</label>
-		<input class="login" type="text" id="url" name="url" value="<?php echo($row["url"]);?>">
-		<br>
+	<label for="email">Email:</label>
+	<input class="login" type="text" id="email" name="email" value="<?php echo($row["email"]);?>">
+	<br>
 
 
-		<label for="departamento">Departamento:</label>
-		<input class="login" type="text" id="departamento" name="departamento" value="<?php echo($row["departamento"]);?>">
-		<br>
+	<label for="url">URL personal:</label>
+	<input class="login" type="text" id="url" name="url" value="<?php echo($row["url"]);?>">
+	<br>
 
 
-		<label for="centromus">Centro:</label>
-		<input class="login" type="text" id="centromus" name="centromus" value="<?php echo($row["centro"]);?>">
-		<br>
+	<label for="departamento">Departamento:</label>
+	<input class="login" type="text" id="departamento" name="departamento" value="<?php echo($row["departamento"]);?>">
+	<br>
 
 
-		<label for="instituto">Instituto de investigación:</label>
-		<input class="login" type="text" id="instituto" name="instituto" value="<?php echo($row["instituto"]);?>">
-		<br>
+	<label for="centromus">Centro:</label>
+	<input class="login" type="text" id="centromus" name="centromus" value="<?php echo($row["centro"]);?>">
+	<br>
 
 
-		<label for="direccion">Dirección:</label>
-		<input class="login" type="text" id="direccion" name="direccion" value="<?php echo($row["direccion"]);?>">
-		<br>
-
-		<label for="admin">Otorgar privelegios de aministrador:</label>
- 		<input type="checkbox" name="admin" value="admin"<?php if($row["admin"]) echo "checked";?>> 
-		<br>
-		<br>
+	<label for="instituto">Instituto de investigación:</label>
+	<input class="login" type="text" id="instituto" name="instituto" value="<?php echo($row["instituto"]);?>">
+	<br>
 
 
+	<label for="direccion">Dirección:</label>
+	<input class="login" type="text" id="direccion" name="direccion" value="<?php echo($row["direccion"]);?>">
+	<br>
 
-		<div id="lower">
-			<input class="login" type="submit" value="Guardar cambios">
-		</div>
-		
-		</div>
+	<label for="admin">Otorgar privelegios de aministrador:</label>
+	<input type="checkbox" name="admin" value="admin"<?php if($row["admin"]) echo "checked";?>> 
+	<br>
+	<br>
+
+
+
+	<div id="lower">
+		<input class="login" type="submit" value="Guardar cambios">
+	</div>
+
+	</div>
 
 	</form>
 	
