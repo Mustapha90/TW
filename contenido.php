@@ -10,13 +10,13 @@ switch ($seccion) {
         include 'src/miembros.php';
         break;
 	case 'publicaciones':
-        include 'html/publicaciones.html';
+        include 'src/publicaciones.php';
         break;
     case 'proyectos':
         include 'src/proyectos.php';
         break;
 	case 'addpub':
-        include 'html/addpub.html';
+        include 'src/addpub.php';
         break;
 	case 'addproyecto':
         include 'src/addproyecto.php';

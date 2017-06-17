@@ -52,6 +52,6 @@ else{
 	$res = dbConnect("SELECT nombre, apellidos, email from usuarios");
 	include("src/formproyecto.php");
 }
-
-
 ?>
+
+

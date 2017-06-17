@@ -6,7 +6,7 @@ ini_set('display_errors', 'On');
 
 require 'dbConnect.php';
 
-$limit = 1;  
+$limit = 3;  
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 $start_from = ($page-1) * $limit;  
   
@@ -88,13 +88,11 @@ $res = dbConnect($sql);
 			<?php endwhile; ?> 	
 			</ul>
 
-
+	   Externos:
 		<?php
 			$sql1 = "SELECT nombrecompleto FROM colaboradoresexternos where codpro='$codpro'";  
 			$res1 = dbConnect($sql1);
 		?>
-
-		Externos:
 			<ul>
 			<?php while($row1 = $res1->fetch_assoc()) : ?>
 				<li><?php echo($row1["nombrecompleto"]);?></li>
@@ -111,12 +109,25 @@ $res = dbConnect($sql);
 	  <tr>
 		 <th>Publicaciones</th>
 		<td>
+
+		<?php
+			$sql1 = "(SELECT articulos.titulo, doi FROM proyectos, articulos where articulos.codpro='$codpro') union
+					(SELECT libros.titulo, doi FROM proyectos, libros where libros.codpro='$codpro') union
+				(SELECT capitulos.titulo, doi FROM proyectos, capitulos where capitulos.codpro='$codpro') union
+				(SELECT conferencias.titulo, doi FROM proyectos, conferencias where conferencias.codpro='$codpro')";  
+			$res1 = dbConnect($sql1);
+		?>
+
+<?php if ($res1->num_rows > 0): ?>
 			<ul>
-				<li> Referencia a publicación 1</li>
-				<li> Referencia a publicación 2</li>
-				<li> Referencia a publicación 3</li>
-				<li> Referencia a publicación 4</li>
+			<?php while($row1 = $res1->fetch_assoc()) : ?>
+				<li><?php echo($row1["titulo"]);?></li>
+			<?php endwhile; ?> 	
 			</ul>
+<?php else: ?>
+   	<p>No hay publicaciones..</p>
+<?php endif; ?>
+
 		</td>
 	  </tr> 	
 	   	  

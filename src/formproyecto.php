@@ -39,7 +39,7 @@
 		<input type="number" id="cuantia" name="cuantia" min="1" max="20000">
 		<br><br>
 
-		<label for="titulopro">Investigador principal:</label>
+		<label for="principal">Investigador principal:</label>
 		<input class="login" type="text" id="investigador" name="investigador">
 
 
