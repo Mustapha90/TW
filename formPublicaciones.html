@@ -9,64 +9,42 @@
 <body>
 
 
+
+
+<h3>Publicaciones</h3>
+
+<div id="centro_content">
 <div id="containerRegistro">
 
-
-
-	<form action='' method='post' enctype="multipart/form-data">
-	
-	
-	
-		<label for="codpro">Código del proyecto:</label>
-		<input class="login" type="text" id="codpro" name="codpro" value="Introduce el código del proyecto">
-
-
-		<label for="titulopro">Título:</label>
-		<input class="login" type="text" id="titulopro" name="titulopro" value="Introduce el título">
-
-
-		<label for="descripro">Descripción:</label>
-		<input class="login" type="text" id="descripro" name="descripro" value="Introduce la descripción">
-		<br>
-
-
-		<label for="fechaproc">Fecha de comienzo:</label><br>
-		<input class="login" type="date" name="fechaproc">
-		<br>
-
-		<label for="fechaprof">Fecha de finalización:</label><br>
-		<input class="login" type="date" name="fechaprof">
-		<br>	
+	<div id="formBusqueda">
+		<form action="" method="post" enctype="multipart/form-data">
+			<label>Formulario de búsqueda</label><br><br>
+		  	<input type="radio" name="pub" value="Tipo" checked> Por tipo
+		  	<input type="radio" name="pub" value="autor"> Por autor
+		  	<input type="radio" name="pub" value="fecha"> Por fecha 
+		  	<input type="radio" name="pub" value="keyword"> Por Palabra clave  <br><br>
 		
-		<label for="entidadcol">Entidades colaboradoras:</label>
-		<input class="login" type="text" id="entidadcol" name="entidadcol" value="Introduce ID de colaboradores">
-		<br>		
+			<div style="float:left; width: 50%; height: 50%;">
+				<input type="text" id="codpro" name="codpro" value="" >
+				
+			</div>
+			<div style="float:left; width: 20%; height: 50%;margin-top: 0.8%">
+				<button id="btnBloquear">Buscar</button>
+			</div>
 		
-		<label for="entidadcol">Cuantía concedida:</label>		
-		<input type="number" name="cuantiapro" min="1" max="20000">
-		<br>
 
-		<label for="titulopro">Investigador principal:</label>
-		<input class="login" type="text" id="invespri" name="invespri" value=" Introduce el ID del investigador principal">
+		</form>
+					
+	</div>
+	<div id="publicacion">
 
-		<label for="titulopro">Investigadores colaboradores:</label>
-		<input class="login" type="text" id="invescol" name="invescol" value="Introduce el ID de los colaboradores">
-		
-		<label for="url">URL:</label>
-		<input class="login" type="text" id="url" name="url" value="Introduce la URL">
-		<br>
+					
+	</div>
 
 
-
-
-		<div id="lower">
-			<input class="login" type="submit" value="Añadir el proyecto">
-		</div>
-	
-	
-	</form>
-	
+	</div>
 </div>
-
+	
+</script>
 </body>
 </html>
