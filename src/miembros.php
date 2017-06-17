@@ -4,8 +4,6 @@
 
 require 'dbConnect.php';
 
-
-
 $limit = 4;
 $sql = "SELECT COUNT(email) FROM usuarios";  
 

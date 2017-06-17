@@ -2,11 +2,11 @@
 
 require 'dbConnect.php';
 
-registrarAccion("Log out", $_SESSION['username']);
+registrarAccion( "Log out", $_SESSION[ 'username' ] );
 
 session_start();
 session_destroy();
 
-header("Location: index.php?sec=home");
+header( "Location: index.php?sec=home" );
 
 ?>

@@ -1,16 +1,17 @@
 <?php
-error_reporting(-1);
-ini_set('display_errors', 'On');
-	session_start();
-	if(isset($_GET['sec']) && $_GET['sec']=='logout') {
-			session_destroy();
-  	}
+error_reporting( -1 );
+ini_set( 'display_errors', 'On' );
+session_start();
+if ( isset( $_GET[ 'sec' ] ) && $_GET[ 'sec' ] == 'logout' ) {
+	session_destroy();
+}
 ?>
 
 <!doctype html>
 <html>
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- jQuery -->
@@ -23,40 +24,40 @@ ini_set('display_errors', 'On');
 
 
 <?php
-    if(isset($_GET['sec'])) {
-    	$seccion = $_GET['sec'];
-    }else{
-      $seccion = 'home';
-    }	
+if ( isset( $_GET[ 'sec' ] ) ) {
+	$seccion = $_GET[ 'sec' ];
+} else {
+	$seccion = 'home';
+}
 ?>
 
 <body>
 
 	<div id="global">
 		<div id="contenido">
-		
+
 			<div class="header">
 				<?php include 'header.php';?>
 			</div>
-			
-			
-			<div class="row">
-				
-					<div class="col-2 menu">
-						<?php include 'navbar.php';?>
-					</div>
 
-					<div class="col-10">
-						<?php include 'contenido.php';?>
-					</div>	
-								
+
+			<div class="row">
+
+				<div class="col-2 menu">
+					<?php include 'navbar.php';?>
+				</div>
+
+				<div class="col-10">
+					<?php include 'contenido.php';?>
+				</div>
+
 			</div>
-			
-			
+
+
 			<div class="footer">
 				<?php include 'footer.php';?>
 			</div>
-			
+
 		</div>
 	</div>
 
@@ -67,4 +68,3 @@ ini_set('display_errors', 'On');
 
 
 </html>
-
