@@ -3,6 +3,8 @@
 
 require 'src/dbConnect.php';
 
+$errorcodpro = '';
+$error=false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -20,6 +22,16 @@ $inv_externos = $_POST['myInputs'];
 $colabs = $_POST['multicheckbox'];
 $entidades = $_POST['entidades'];
 
+
+
+$existeProyecto = dbConnect( "SELECT * FROM proyectos WHERE codpro='$codpro'" );
+if ( mysqli_num_rows( $existeProyecto ) == 1 ) {
+	$errorcodpro = "Ya existe un proyecto con el mismo código!";
+	$error = true;
+}
+
+
+if(!$error){
 
 $insert1 = dbConnect("INSERT INTO proyectos (codpro, titulo, descripcion,fechacomienzo, fechafin, cuantia, investigador, url) VALUES ('$codpro','$titulo','$descripcion','$fechacomienzo', '$fechafin', '$cuantia', '$investigador', '$url')");
 
@@ -45,9 +57,14 @@ foreach ($entidades as $entidad) {
 
 
 registrarAccion("Añadir Proyecto", $_SESSION['username']);
-	
-
 }
+
+else{
+	$res = dbConnect("SELECT nombre, apellidos, email from usuarios");
+	include("src/formproyecto.php");
+}
+}
+
 else{
 	$res = dbConnect("SELECT nombre, apellidos, email from usuarios");
 	include("src/formproyecto.php");

@@ -2,20 +2,73 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-
+session_start();
 
 require 'dbConnect.php';
 
+
+$sql='';
 $limit = 2;  
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 $start_from = ($page-1) * $limit;  
 
 
+if(isset($_SESSION["tipo"])){
+	if($_SESSION["tipo"]=="tipo"){
+		$term = $_SESSION["termino"];
+		$tabla= $_SESSION["tabla"];
+		$sql = "SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM $tabla WHERE titulo LIKE '%".$term."%'"; 
+	}
+	else if($_SESSION["tipo"]=="autor"){
+		$term = $_SESSION["termino"];
+
+
+$sql = "SELECT autoresexternos.doi, titulo, fecha, resumen, s.url, codpro, tipo FROM  
+	    (SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM articulos union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM libros union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM capitulos union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM conferencias) s, autoresexternos WHERE nombrecompleto LIKE '%".$term."%' AND autoresexternos.doi=s.doi 
+		union
+		SELECT autoresmiembros.doi, titulo, fecha, resumen, s.url, codpro, tipo FROM  
+	    (SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM articulos union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM libros union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM capitulos union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM conferencias) s, autoresmiembros, usuarios WHERE autoresmiembros.nombrecompleto=usuarios.email AND autoresmiembros.doi=s.doi and CONCAT_WS(' ', usuarios.nombre, apellidos) LIKE '%".$term."%' ORDER BY fecha DESC LIMIT $start_from, $limit"; 
+	}
+	else if($_SESSION["tipo"]=="fecha"){
+		$fecha1 = $_SESSION["fecha1"];
+		$fecha2=  $_SESSION["fecha2"];
+
+		
+
+	$sql = "SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM  
+	    (SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM articulos union
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM libros union
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM capitulos union
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM conferencias) s where s.fecha between '$fecha1' and '$fecha2'"; 
+		
+	}
+
+	else{
+		$term = $_SESSION["termino"];
+		$sql = "SELECT keywords.doi, titulo, fecha, resumen, s.url, codpro, tipo FROM  
+	    (SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM articulos union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM libros union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM capitulos union all
+		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM conferencias) s, keywords where keywords.doi=s.doi and keyword LIKE '%".$term."%' ORDER BY fecha DESC LIMIT $start_from, $limit";
+
+	}
+
+}
+else{
 $sql = "SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM  
 	    (SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM articulos union all
 		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM libros union all
 		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM capitulos union all
 		SELECT doi, titulo, fecha, resumen, url, codpro, tipo FROM conferencias) s ORDER BY fecha DESC LIMIT $start_from, $limit"; 
+}
+
+
 
 $res = dbConnect($sql);
 
