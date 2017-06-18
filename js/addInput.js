@@ -225,9 +225,87 @@ function validarFormularioPublicacion(form) {
 }
 
 
+function validarEmail(email) {
+	 var emailregex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return emailregex.test(email);
+}
 
 
 
+
+function validarTelefono(telefono) {
+	 var telefonoregex = /^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/;
+
+    return telefonoregex.test(telefono);
+}
+
+function validarFicheroFoto(fichero){
+	var extregex = /(\.jpg|\.jpeg|\.bmp|\.gif|\.png)$/i;
+	if(!extregex.exec(fichero)){
+		return false;
+	}
+	return true;
+}
+
+function validarFormMiembro(form){
+	var success=true;
+
+	if(!validarEmail(form.email.value)){
+   		document.getElementById("erroremail").innerHTML = "No es un email válido!";
+		success=false;
+	}
+	else{
+   		//document.getElementById("erroremail").innerHTML = "";
+		
+	}
+
+	if(!validarUrl(form.url.value)){
+   		document.getElementById("errorurl").innerHTML = "No es una URL válida!";
+		success=false;
+	}
+	else{
+   		document.getElementById("errorurl").innerHTML = "";
+		
+	}
+
+	if(!validarTelefono(form.telefono.value)){
+   		document.getElementById("errtelefono").innerHTML = "No es un número de telefono válido!";
+		success=false;
+	}
+	else{
+   		document.getElementById("errtelefono").innerHTML = "";
+		
+	}
+
+	if(form.password.value.length<8){
+   		document.getElementById("errpassword").innerHTML = "La contraseña debe tener una longitud de al menos 8 caracteres!";
+		success=false;
+	}
+	else{
+   		document.getElementById("errpassword").innerHTML = "";	
+		if(form.password.value != form.passwordConf.value){
+   			document.getElementById("passConfError").innerHTML = "Las contraseñas no coinciden!";
+			success=false;			
+		}
+		else{
+   			document.getElementById("passConfError").innerHTML = "";
+		}
+	}
+
+
+	if(!validarFicheroFoto(form.fileToUpload.value)){
+   		document.getElementById("fileErr").innerHTML = "No es un una imagen!";
+		success=false;
+	}
+	else{
+   		document.getElementById("fileErr").innerHTML = "";
+		
+	}
+
+
+	return success;
+}
 
 
 

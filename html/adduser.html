@@ -1,13 +1,14 @@
 
+<script src="js/addInput.js" language="Javascript" type="text/javascript"></script>
 <div id="containerRegistro">
-	<form action='?sec=adduser&act=register' method='post' enctype="multipart/form-data">
+	<form action="index.php?sec=adduser&act=register" method='post' enctype="multipart/form-data" onsubmit="return validarFormMiembro(this)">
 
 		<label for="username">Nombre:</label>
-		<input class="login" type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>">
+		<input class="login" type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>" required>
 
 
 		<label for="email">Apellidos:</label>
-		<input class="login" type="text" id="apellidos" name="apellidos" value="<?php echo $apellidos;?>">
+		<input class="login" type="text" id="apellidos" name="apellidos" value="<?php echo $apellidos;?>" required>
 
 
 		<label for="categoria">Categoría:</label>
@@ -19,49 +20,49 @@
 
 
 		<label for="email">Teléfono de contacto:</label>
-		<input class="login" type="text" id="telefono" name="telefono" value="<?php echo $telefono;?>">
+		<input class="login" type="text" id="telefono" name="telefono" value="" required>
+		<div class="errorlabel"<label for="error" id="errtelefono"></label></div><br>
 		<br>
 
 
 		<label for="email">Email:</label>
-		<input class="login" type="text" id="email" name="email" value="<?php echo $email;?>">
+		<input class="login" type="text" id="email" name="email" value="<?php echo $email;?>" required>
+		<div class="errorlabel"<label for="error" id="erroremail"><?php echo $emailError;?></label></div><br>
 		<br>
 
 
 		<label for="password">Contraseña:</label>
-		<input class="login" type="password" id="password" name="password">	
-		<div class="errorlabel"<label for="passError"><?php echo $passwordError;?></label></div><br>
+		<input class="login" type="password" id="password" name="password" required>	
+		<div class="errorlabel"<label for="errpassword" id="errpassword"></label></div><br>
 
 
 		<label for="passwordConf">Confirmar contraseña:</label>
-		<input class="login" type="password" id="passwordConf" name="passwordConf">
-		<div class="errorlabel"<label for="passConfError"><?php echo $passwordConfError;?></label></div><br>
+		<input class="login" type="password" id="passwordConf" name="passwordConf" required>
+		<div class="errorlabel"<label for="passConfError" id="passConfError"></label></div><br>
 
 		<label for="url">URL personal:</label>
-		<input class="login" type="text" id="url" name="url" value="<?php echo $url;?>">
+		<input class="login" type="text" id="url" name="url" value="" required>
+		<div class="errorlabel"<label for="error" id="errorurl"></label></div><br>
 		<br>
 
 
-
-
-
 		<label for="departamento">Departamento:</label>
-		<input class="login" type="text" id="departamento" name="departamento" value="<?php echo $departamento;?>">
+		<input class="login" type="text" id="departamento" name="departamento" value="<?php echo $departamento;?>" required>
 		<br>
 
 
 		<label for="centromus">Centro:</label>
-		<input class="login" type="text" id="centromus" name="centromus" value="<?php echo $centro;?>">
+		<input class="login" type="text" id="centromus" name="centromus" value="<?php echo $centro;?>" required>
 		<br>
 
 
 		<label for="instituto">Instituto de investigación:</label>
-		<input class="login" type="text" id="instituto" name="instituto" value="<?php echo $instituto;?>">
+		<input class="login" type="text" id="instituto" name="instituto" value="<?php echo $instituto;?>" required>
 		<br>
 
 
 		<label for="direccion">Dirección:</label>
-		<input class="login" type="text" id="direccion" name="direccion" value="<?php echo $direccion;?>">
+		<input class="login" type="text" id="direccion" name="direccion" value="<?php echo $direccion;?>" required>
 		<br>
 
 
@@ -71,8 +72,8 @@
 
 
 		<label for="foto">Fotografía:</label>
-		<input type="file" name="fileToUpload" id="fileToUpload">
-		<div class="errorlabel"<label for="passError"><?php echo $imageError;?></label></div><br>
+		<input type="file" name="fileToUpload" id="fileToUpload" required>
+		<div class="errorlabel"<label for="fileErr" id="fileErr"></label></div><br>
 
 
 		<div id="lower">

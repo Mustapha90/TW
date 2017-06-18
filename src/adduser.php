@@ -20,8 +20,6 @@
 	$target_file = '';
 
 	$emailError = '';
-	$passwordError = '';
-	$passwordConfError = '';
 	$email = '';
 	$nombre = '';
 	$password = '';
@@ -43,39 +41,16 @@
 
 	function validateForm() {
 		$errores = 0;
-		global $emailError, $passwordError, $passwordConfError, $email, $password;
-		global $nombre, $email, $password, $nombre, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen, $imageError;
+		global $nombre, $email, $password, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen, $password, $imageError, $emailError;
 
 
 		if ( isset( $_POST[ 'email' ] ) ) {
 			$email = filter_var( $_POST[ 'email' ], FILTER_SANITIZE_EMAIL );
-			if ( !filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
-				$emailError = "Introduzca un email válido!";
-				$errores = 1;
-			} else {
-				$existeEmail = dbConnect( "SELECT * FROM usuarios WHERE email='$email'" );
+			$existeEmail = dbConnect( "SELECT * FROM usuarios WHERE email='$email'" );
 				if ( mysqli_num_rows( $existeEmail ) == 1 ) {
 					$emailError = "Este email ya existe!";
 					$errores = 1;
 				}
-			}
-		}
-
-		if ( isset( $_POST[ 'password' ] ) ) {
-			$password = $_POST[ 'password' ];
-			if ( strlen( $password ) < 6 ) {
-				$passwordError = "La contraseña debe contener al menos 6 caracteres";
-				$errores = 1;
-			} else {
-				if ( isset( $_POST[ 'passwordConf' ] ) ) {
-					$passwordConf = $_POST[ 'passwordConf' ];
-					if ( $password != $passwordConf ) {
-						$passwordConfError = "Las contraseñas no coinciden";
-						$errores = 1;
-					}
-				}
-			}
-
 		}
 
 		$nombre = $_POST[ 'nombre' ];
@@ -100,12 +75,6 @@
 			$errores = 1;
 		}
 
-
-		if ( $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" &&
-			$imageFileType != "gif" ) {
-			$imageError = "Solo se permiten los formatos, JPG, JPEG, PNG y GIF.";
-			$errores = 1;
-		}
 		return $errores;
 
 	}
