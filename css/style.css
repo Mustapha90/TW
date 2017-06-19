@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body,html{margin:0px;}
+body,html{margin:0px;font-family: "Lucida Sans", sans-serif; }
 
 #global {width:100%; margin: 0px; padding: 0px; background-color:white;}
 
@@ -11,7 +11,6 @@ body,html{margin:0px;}
 
 		.row::after { content: ""; clear: both; display: block; }
 		[class*="col-"] { float: left; padding: 15px; }
-		html { font-family: "Lucida Sans", sans-serif; }
 
 		/* For desktop: */
 		.col-1 {width: 8.33%;}
@@ -36,11 +35,9 @@ body,html{margin:0px;}
 
 
 
+
+
 		.header { background-color: #0F6190; color: #ffffff; padding: 20px;}		
-		.header menuright {float: left; width: 100%; height: 50px; background-color:yellow}
-		.header menuright menurighterror{float: left; width: 100%; height: 50px; background-color:yellow; color:red}
-		.header menuright loginform{float: left; width: 100%; height: 50px; background-color:yellow; color:red;border-radius: 5px;}
-		.header menuright loginform button {background-color:yellow}
 
 
 
@@ -50,8 +47,6 @@ body,html{margin:0px;}
 		.submenu { overflow: hidden; max-height: 0; -webkit-transition: all 0.5s ease-out;}
 		.menu li a {text-decoration: none; }
 		.menu li:hover { background-color: #0099cc; }
-
-
 
 
 

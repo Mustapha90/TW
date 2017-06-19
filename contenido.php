@@ -1,4 +1,3 @@
-<div id="centro2">
 	<div id="centro_header">
 
 <?php 
@@ -79,7 +78,4 @@ switch ($seccion) {
         break;
 }
 ?>
-
-
-</div>
 
