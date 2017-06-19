@@ -1,4 +1,11 @@
+<h3>Restaurar Backup</h3>
+</div>
+
 <?php
+
+if (!isset($_SESSION["admin"])) {
+	return include("html/deny.html");
+}
 
 include 'src/dbconfig.php';
 
@@ -50,8 +57,7 @@ function validarFichero($target_file){
 }
 ?>
 
-<h3>Restaurar Backup</h3>
-</div>
+
 
 
 <div id="centro_content">

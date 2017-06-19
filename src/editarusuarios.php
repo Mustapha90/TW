@@ -22,8 +22,6 @@ $total_records = $row[ 0 ];
 $total_pages = ceil( $total_records / $limit );
 ?>
 
-<h3>Editar usuarios</h3>
-</div>
 
 <div id="centro_content">
 	<div id="target-content"></div>

@@ -1,5 +1,11 @@
-<?php
 
+<h3>Log</h3>
+</div>
+
+<?php
+if (!isset($_SESSION["admin"])) {
+	return include("html/deny.html");
+}
 
 require 'dbConnect.php';
 
@@ -15,8 +21,7 @@ $total_records = $row[ 0 ];
 $total_pages = ceil( $total_records / $limit );
 ?>
 
-<h3>Log</h3>
-</div>
+
 
 <div id="centro_content">
 	<div id="target-content"></div>

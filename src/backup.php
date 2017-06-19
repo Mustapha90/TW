@@ -1,4 +1,13 @@
+
+<h3>Realizar Backup</h3>
+</div>
+
+
 <?php
+
+if (!isset($_SESSION["admin"])) {
+	return include("html/deny.html");
+}
 
 include 'src/dbconfig.php';
 
@@ -22,9 +31,6 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
 ?>
 
 
-
-<h3>Realizar Backup</h3>
-</div>
 
 
 
