@@ -22,9 +22,15 @@
 
 	<div id="global">
 		<div id="pagina">
+			<div class="instalarpag">
+				<div id="centro_header"> 
+					<p> Instalar</p>
+				</div>
+				<div id="centro_content2">
+					
+				</div>
 
-		hola
-
+			</div>
 		</div>
 	</div>
 
