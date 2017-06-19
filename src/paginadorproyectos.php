@@ -21,7 +21,7 @@ $res = dbConnect($sql);
 	<?php $codpro = $row["codpro"];?>
 
 	<?php if(isset($_SESSION['loggedin']) and $_SESSION['admin']==1) : ?>
-			<form id="form1" name="form1" method="post" action="index.php?sec=deleteproyecto&codpro=<?php echo($row["codpro"]);?>" 
+			<form id="formeditar" name="editar" method="post" action="index.php?sec=deleteproyecto&codpro=<?php echo($row["codpro"]);?>" 
 			   onsubmit="return confirm('Estas seguro que desea eliminar este proyecto?');">
 			  <input type="hidden" name="act" value="run">
 			  <input id="btnDelete" name="btnDelete" type="submit" value="Eliminar"/>

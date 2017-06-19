@@ -1,5 +1,3 @@
-<h3>Añadir una publicación</h3>
-</div>
 
 <div id="centro_content">
 	

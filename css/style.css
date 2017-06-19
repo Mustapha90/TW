@@ -122,8 +122,8 @@ body,html{margin:0px;font-family: "Lucida Sans", sans-serif; }
 
 			#btnDelete{ background-color: red; border: none; color: white; padding: 7px 17px; text-align: center; text-decoration: none;
 						display: inline-block; 	font-size: 11px; margin: 2px 1px; cursor: pointer; border-radius: 4px; }
-			#btnEditar{ background-color: #4CAF50; border: none; color: white; padding: 6px 19px; text-align: center; text-decoration: none; 
-						display: inline-block;font-size: 11px; margin: 2px 1px; padding-right: 25px; cursor: pointer; border-radius: 4px;}
+			#btnEditar{ background-color: #4CAF50; border: none; color: white; padding: 7px 19px; text-align: center; text-decoration: none; 
+						display: inline;font-size: 11px; margin: 2px 1px; padding-right: 25px; cursor: pointer; border-radius: 4px;}
 			#btnBloquear{ background-color: #0F6190; border: none; color: white; padding: 7px 14px; text-align: center; text-decoration: none; 
 						display: inline-block; font-size: 11px; margin: 2px 1px;  cursor: pointer; border-radius: 4px;}
 			#btnDesbloquear{ background-color: #0F6190; border: none; color: white; padding: 7px 5px; text-align: center; text-decoration: none;
@@ -145,6 +145,13 @@ body,html{margin:0px;font-family: "Lucida Sans", sans-serif; }
 
 
 		.footer { background-color: #0F6190; color: #ffffff; text-align: center; font-size: 12px; padding: 8px;}
+
+#formeditar{
+	float: left;
+	text-decoration: none;
+}
+
+
 
 
 

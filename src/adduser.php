@@ -5,6 +5,10 @@
 <div id="centro_content">
 	<?php
 
+	if (!isset($_SESSION["admin"])) {
+		return include("html/deny.html");
+	}
+
 
 	require 'src/dbConnect.php';
 
@@ -36,6 +40,7 @@
 	$direccion = '';
 	$imagen = '';
 	$admin = '';
+	$director = '';
 	$success = 0;
 
 
@@ -89,11 +94,17 @@
 		else
 			$admin = 0;
 
+
+		if ( isset( $_POST[ 'director' ] ) )
+			$director = 1;
+		else
+			$director = 0;
+
 		if ( !( move_uploaded_file( $_FILES[ "fileToUpload" ][ "tmp_name" ], $target_file ) ) ) {
 			echo "Ha habido un error al subir la foto";
 		}
 
-		$insert = dbConnect( "INSERT INTO usuarios (nombre, email, password,admin, apellidos, categoria, telefono, url, departamento, centro, instituto, direccion, imagen) VALUES ('$nombre','$email','$hash','$admin', '$apellidos', '$categoria', '$telefono', '$url', '$departamento', '$centro', '$instituto', '$direccion', '$imagen')" );
+		$insert = dbConnect( "INSERT INTO usuarios (nombre, email, password,admin, director, apellidos, categoria, telefono, url, departamento, centro, instituto, direccion, imagen) VALUES ('$nombre','$email','$hash','$admin','$director', '$apellidos', '$categoria', '$telefono', '$url', '$departamento', '$centro', '$instituto', '$direccion', '$imagen')" );
 
 		if ( !$insert ) {
 			die( "No se ha podido registrar el usuario: " );

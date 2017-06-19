@@ -1,4 +1,12 @@
+<h3>Eliminar proyecto</h3>
+</div>
+
+
 <?php
+
+if (!isset($_SESSION["admin"])) {
+	return include("html/deny.html");
+}
 
 require 'dbConnect.php';
 
@@ -15,8 +23,6 @@ registrarAccion( "Eliminar proyecto", $_SESSION[ 'username' ] );
 
 ?>
 
-<h3>Eliminar proyecto</h3>
-</div>
 
 <div id="centro_content">
 	<div id="centro_content2">

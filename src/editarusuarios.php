@@ -1,8 +1,15 @@
+
+<h3>Editar usuarios</h3>
+</div>
 <?php
 
 
 require 'dbConnect.php';
 
+
+if (!isset($_SESSION["admin"])) {
+	return include("html/deny.html");
+}
 
 
 $limit = 6;

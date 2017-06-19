@@ -1,5 +1,4 @@
-<h3>Añadir proyecto</h3>
-</div>
+
 
 
 <div id="centro_content">

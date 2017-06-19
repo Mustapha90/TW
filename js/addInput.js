@@ -212,10 +212,6 @@ function validarFormularioPublicacion(form) {
 	}
 
 
-	if(document.getElementById("autores").value == ""){   		
-		document.getElementById("errorautor").innerHTML = "Elige al menos un autor miembro!";
-	}
-
 
 	if(!validarUrl(form.url.value)){
    		document.getElementById("errorurl").innerHTML = "No es una URL válida!";
@@ -307,29 +303,4 @@ function validarFormMiembro(form){
 
 	return success;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

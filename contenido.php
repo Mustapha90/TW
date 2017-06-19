@@ -14,6 +14,12 @@ switch ($seccion) {
     case 'proyectos':
         include 'src/proyectos.php';
         break;
+    case 'deletepub':
+        include 'src/deletepub.php';
+        break;
+    case 'editpub':
+        include 'src/editpub.php';
+        break;
 	case 'addpub':
         include 'src/addpub.php';
         break;
@@ -56,9 +62,6 @@ switch ($seccion) {
         break;
 	case 'edituser':
         include 'src/edituser.php';
-        break;
-	case 'editarproyecto':
-        include 'src/editarproyecto.php';
         break;
 	case 'editproject':
         include 'src/editproject.php';

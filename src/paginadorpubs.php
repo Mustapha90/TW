@@ -77,6 +77,15 @@ $res = dbConnect($sql);
 
 <?php while($row = $res->fetch_assoc()) : ?>
 	<?php $doi = $row["doi"];?>
+
+	<?php if(isset($_SESSION['loggedin']) and $_SESSION['admin']==1) : ?>
+			<form id="formeditar" name="editar" method="post" action="index.php?sec=deletepub&doi=<?php echo($row["doi"]);?>&tipo=<?php echo($row["tipo"]);?>" 
+			   onsubmit="return confirm('Estas seguro que desea eliminar esta publicación?');">
+			  <input type="hidden" name="act" value="run">
+			  <input id="btnDelete" name="btnDelete" type="submit" value="Eliminar"/>
+			</form>
+			<a href="index.php?sec=editpub&doi=<?php echo($row["doi"]);?>&tipo=<?php echo($row["tipo"]);?>"> <button id="btnEditar">Editar</button> </a>
+  	<?php endif; ?>
 	<table id="tablaproyecto">
 	  <tr>
 		<th>DOI</th>
@@ -107,6 +116,63 @@ $res = dbConnect($sql);
  	  <tr>
 		<th>Proyecto</th>
 		<td><?php echo($row["codpro"]);?></td>
+	  </tr>
+
+ 	  <tr>
+		<th>Autores</th>
+		<td>
+
+			<?php 
+				$r = dbConnect("SELECT * from autoresmiembros where doi='$doi'"); 
+			?>
+			<p> Miembros:</p>
+			<ul>
+			<?php while($autores = $r->fetch_assoc()) : ?>
+			<li>
+				<?php
+					$email = $autores["nombrecompleto"];
+					$resp = dbConnect("SELECT CONCAT_WS(' ', nombre, apellidos) AS nombrecompleto from usuarios where email='$email'");
+					$f = mysqli_fetch_row($resp);  
+					$nombre = $f[0];  
+					echo($nombre);
+				?><br>
+			</li>
+			<?php endwhile; ?> 	
+
+			<?php 
+				$r = dbConnect("SELECT * from autoresexternos where doi='$doi'"); 
+			?>
+		</ul>
+			<p> Externos:</p>
+			<ul>
+			<?php while($autores = $r->fetch_assoc()) : ?>
+			<li>
+				<?php
+					echo($autores["nombrecompleto"]);
+				?><br>
+			</li>
+			<?php endwhile; ?> 	
+		</ul>
+
+		</td>
+	  </tr>
+
+		<th>Keywords</th>
+		<td>
+			<?php 
+				$r = dbConnect("SELECT * from keywords where doi='$doi'"); 
+			?>
+			<ul>
+			<?php while($keywords = $r->fetch_assoc()) : ?>
+			<li>
+				<?php
+					echo($keywords["keyword"]);
+				?><br>
+			</li>
+			<?php endwhile; ?> 	
+		</ul>
+
+		</td>
 	  </tr>
 
 

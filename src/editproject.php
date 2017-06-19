@@ -1,4 +1,12 @@
+
+<h3>Editar proyecto</h3>
+</div>
+
 <?php
+
+if (!isset($_SESSION["admin"])) {
+	return include("html/deny.html");
+}
 
 require 'src/dbConnect.php';
 

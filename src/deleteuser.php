@@ -1,4 +1,13 @@
+
+<h3>Eliminar usuario</h3>
+</div>
+
 <?php
+
+
+if (!isset($_SESSION["admin"])) {
+	return include("html/deny.html");
+}
 
 require 'dbConnect.php';
 
@@ -10,8 +19,7 @@ registrarAccion( "Eliminar usuario", $_SESSION[ 'username' ] );
 
 ?>
 
-<h3>Eliminar usuario</h3>
-</div>
+
 
 <div id="centro_content">
 	<div id="centro_content2">

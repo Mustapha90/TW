@@ -1,7 +1,4 @@
-
 <?php
-
-
 
 $sql = "SELECT * FROM proyectos where codpro='$codpro'";
   
@@ -9,13 +6,7 @@ $res = dbConnect($sql);
 
 $row = $res->fetch_assoc();
 
-
 ?>
-
-
-
-<h3>Editar proyecto</h3>
-</div>
 
 
 <div id="centro_content">
