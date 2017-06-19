@@ -5,7 +5,7 @@ body,html{margin:0px;}
 
 #global {width:100%; margin: 0px; padding: 0px; background-color:white;}
 
-	#contenido {width:95%; margin:0 auto;  height: auto; }
+	#pagina {width:95%; margin:0 auto;  height: auto; }
 
 		* { box-sizing: border-box; }
 

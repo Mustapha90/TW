@@ -58,6 +58,15 @@ switch ($seccion) {
 	case 'edituser':
         include 'src/edituser.php';
         break;
+	case 'editarproyecto':
+        include 'src/editarproyecto.php';
+        break;
+	case 'editproject':
+        include 'src/editproject.php';
+        break;
+	case 'deleteproyecto':
+        include 'src/deleteproyecto.php';
+        break;
 	case 'restore':
         include 'src/restore.php';
         break;

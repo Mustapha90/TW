@@ -34,7 +34,7 @@ if ( isset( $_GET[ 'sec' ] ) ) {
 <body>
 
 	<div id="global">
-		<div id="contenido">
+		<div id="pagina">
 
 			<div class="header">
 				<?php include 'header.php';?>

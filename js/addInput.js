@@ -87,6 +87,7 @@ function validarFormularioProyecto(form) {
 	var fecha1,fecha2, d1, d2;
 
 
+
 	if(!validarUrl(form.url.value)){
    		 document.getElementById("errorurl").innerHTML = "No es una URL válida!";
 		success=false;
@@ -256,7 +257,7 @@ function validarFormMiembro(form){
 		success=false;
 	}
 	else{
-   		//document.getElementById("erroremail").innerHTML = "";
+   		document.getElementById("erroremail").innerHTML = "";
 		
 	}
 

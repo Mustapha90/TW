@@ -21,7 +21,7 @@
 			<li><a>Administrar proyectos</a>
 				<ul  class="submenu">
 					<li><a href="index.php?sec=addproyecto">Añadir proyecto</a></li>
-					<li><a href="">Editar proyectos</a></li>
+					<li><a href="index.php?sec=editarproyecto">Editar proyectos</a></li>
 				</ul>					
 			</li>
 		</ul>
@@ -43,6 +43,9 @@
 			</ul>					
 		</div>
   	<?php endif; ?>
+
+
+
 
 
 				

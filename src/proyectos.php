@@ -16,13 +16,14 @@ $total_records = $row[0];
 $total_pages = ceil($total_records / $limit); 
 ?>
 
+
 <h3>Listado de proyectos del grupo</h3>
 </div>
 
 <div id="centro_content">
 <div id="target-content" ></div>
 
-<?php if ($res->num_rows > 0): ?>
+<?php if (!$total_records==0): ?>
 		<div id="center">
   			<div id="pagination">  
            			<?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
