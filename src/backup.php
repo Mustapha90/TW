@@ -32,8 +32,6 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
 
 
 
-
-
 <div id="centro_content">
 	<div id="centro_content2">
 
