@@ -46,7 +46,7 @@
 
 	function validateForm() {
 		$errores = 0;
-		global $nombre, $email, $password, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen, $password, $imageError, $emailError;
+		global $nombre, $email, $password, $apellidos, $categoria, $telefono, $url, $departamento, $centro, $instituto, $direccion, $target_dir, $target_file, $imageFileType, $imagen, $imageError, $emailError;
 
 
 		if ( isset( $_POST[ 'email' ] ) ) {
@@ -67,6 +67,7 @@
 		$centro = $_POST[ 'centromus' ];
 		$instituto = $_POST[ 'instituto' ];
 		$direccion = $_POST[ 'direccion' ];
+		$password = $_POST[ 'password' ];
 
 
 

@@ -245,7 +245,7 @@ function validarFicheroFoto(fichero){
 	return true;
 }
 
-function validarFormMiembro(form){
+function validarFormMiembro(form, imagen){
 	var success=true;
 
 	if(!validarEmail(form.email.value)){
@@ -290,7 +290,7 @@ function validarFormMiembro(form){
 		}
 	}
 
-
+if(imagen){
 	if(!validarFicheroFoto(form.fileToUpload.value)){
    		document.getElementById("fileErr").innerHTML = "No es un una imagen!";
 		success=false;
@@ -299,6 +299,7 @@ function validarFormMiembro(form){
    		document.getElementById("fileErr").innerHTML = "";
 		
 	}
+}
 
 
 	return success;

@@ -1,8 +1,47 @@
+<!doctype html>
+<html>
 
-<script src="js/addInput.js" language="Javascript" type="text/javascript"></script>
-<div id="containerRegistro">
-	<form action="index.php?sec=adduser&act=register" method='post' enctype="multipart/form-data" onsubmit="return validarFormMiembro(this, true)">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<!-- jQuery -->
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+	<title>GRUPO DE INSVESTIGACION MB</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+
+</head>
+
+
+<body>
+
+	<div id="global">
+		<div id="pagina">
+			<div class="instalarpag">
+				<div id="centro_header"> 
+					<h3>Instalación de la página web</h3>
+		<div id="containerRegistro">
+			<script src="js/addInput.js" language="Javascript" type="text/javascript"></script>
+			<form action="" method='post' onsubmit="return validarFormMiembro(this, false)">
+
+				  	<fieldset>
+								<legend>Datos de acceso a la base de datos:</legend>
+								<label for="host">Host:</label>
+								<input class="login" type="text" id="host" name="host" required>
+
+								<label for="user">Usuario:</label>
+								<input class="login" type="text" id="user" name="user" required>
+
+								<label for="passdb">Contraseña:</label>
+								<input class="login" type="password" id="passdb" name="passdb" required>
+
+								<label for="namebd">Nombre de la BD:</label>
+								<input class="login" type="text" id="bdname" name="bdname" required>
+				 	 </fieldset>
+<br><br>
+
+				  	<fieldset>
+								<legend>Crear un usuario administrador:</legend>
 		<label for="username">Nombre:</label>
 		<input class="login" type="text" id="nombre" name="nombre" value="<?php echo $nombre;?>" required>
 
@@ -66,26 +105,39 @@
 		<br>
 
 
-		<label for="admin">Otorgar privelegios de aministrador:</label>
- 		<input type="checkbox" name="admin" value="admin"><br>
-		<br>
-
 		<label for="director">Director:</label>
  		<input type="checkbox" name="director" value="director"><br>
 		<br>
 
 
-		<label for="foto">Fotografía:</label>
-		<input type="file" name="fileToUpload" id="fileToUpload" required>
-		<div class="errorlabel"<label for="fileErr" id="fileErr"></label></div><br>
 
 
-		<div id="lower">
-			<input class="login" type="submit" value="Añadir miembro">
-		</div>
+				 	 </fieldset>
 
-	</form>
+
+
+
+
+				<div id="lower">
+					<input class="login" type="submit" value="Instalar">
+				</div>
+
+			</form>
 	
-</div>
 
 
+
+
+						</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+
+
+
+</html>
